@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560"
+  font-family="sans-serif" role="img" aria-labelledby="dfd-title dfd-desc">
+  <title id="dfd-title">Data flow diagram for the Data Integrity ecosystem</title>
+  <desc id="dfd-desc">
+    Three dashed system boundaries from left to right. In the Signing System
+    (C1), the Signer (E1) provides an Input Document (O1) to the Transform
+    (P1), Hash (P2), and Sign (P3) processes, with the Security Module (S1)
+    supplying private keys to Sign. The Signed Document (O2) flows over F1,
+    Transmit to Holder, into the Holder System (C2), where the Holder (E2)
+    uses the Store (P4) process and Holder Storage (S2). The Signed Document
+    then flows over F2, Transmit to Verifier, into the Verifier System (C3),
+    where the Verifier (E3) receives the result of the Verify (P5) process.
+  </desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+      markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <!-- ================= System boundaries (C) ================= -->
+  <rect x="30" y="130" width="560" height="390" rx="8" fill="none"
+    stroke="#666666" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="45" y="158" font-size="15" font-weight="bold"
+    fill="#444444">C1 Signing System</text>
+
+  <rect x="740" y="130" width="300" height="390" rx="8" fill="none"
+    stroke="#666666" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="755" y="158" font-size="15" font-weight="bold"
+    fill="#444444">C2 Holder System</text>
+
+  <rect x="1090" y="130" width="280" height="390" rx="8" fill="none"
+    stroke="#666666" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="1105" y="158" font-size="15" font-weight="bold"
+    fill="#444444">C3 Verifier System</text>
+
+  <!-- ================= External entities (E) ================= -->
+  <rect x="60" y="30" width="140" height="50" fill="#f4f4f4"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="130" y="60" font-size="15" text-anchor="middle"
+    fill="#111111">E1 Signer</text>
+
+  <rect x="820" y="30" width="140" height="50" fill="#f4f4f4"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="890" y="60" font-size="15" text-anchor="middle"
+    fill="#111111">E2 Holder</text>
+
+  <rect x="1160" y="30" width="140" height="50" fill="#f4f4f4"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="1230" y="60" font-size="15" text-anchor="middle"
+    fill="#111111">E3 Verifier</text>
+
+  <!-- ================= Processes (P) ================= -->
+  <ellipse cx="135" cy="300" rx="65" ry="36" fill="#eaf1fb"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="135" y="305" font-size="15" text-anchor="middle"
+    fill="#111111">P1 Transform</text>
+
+  <ellipse cx="310" cy="300" rx="60" ry="36" fill="#eaf1fb"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="310" y="305" font-size="15" text-anchor="middle"
+    fill="#111111">P2 Hash</text>
+
+  <ellipse cx="485" cy="300" rx="60" ry="36" fill="#eaf1fb"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="485" y="305" font-size="15" text-anchor="middle"
+    fill="#111111">P3 Sign</text>
+
+  <ellipse cx="890" cy="300" rx="60" ry="36" fill="#eaf1fb"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="890" y="305" font-size="15" text-anchor="middle"
+    fill="#111111">P4 Store</text>
+
+  <ellipse cx="1230" cy="300" rx="62" ry="36" fill="#eaf1fb"
+    stroke="#333333" stroke-width="1.5"/>
+  <text x="1230" y="305" font-size="15" text-anchor="middle"
+    fill="#111111">P5 Verify</text>
+
+  <!-- ================= Data stores (S) ================= -->
+  <g>
+    <rect x="390" y="420" width="190" height="50" fill="#ffffff" stroke="none"/>
+    <line x1="390" y1="420" x2="580" y2="420" stroke="#333333"
+      stroke-width="1.5"/>
+    <line x1="390" y1="470" x2="580" y2="470" stroke="#333333"
+      stroke-width="1.5"/>
+    <text x="485" y="450" font-size="15" text-anchor="middle"
+      fill="#111111">S1 Security Module</text>
+  </g>
+
+  <g>
+    <rect x="790" y="420" width="200" height="50" fill="#ffffff" stroke="none"/>
+    <line x1="790" y1="420" x2="990" y2="420" stroke="#333333"
+      stroke-width="1.5"/>
+    <line x1="790" y1="470" x2="990" y2="470" stroke="#333333"
+      stroke-width="1.5"/>
+    <text x="890" y="450" font-size="15" text-anchor="middle"
+      fill="#111111">S2 Holder Storage</text>
+  </g>
+
+  <!-- ================= Data objects (O) ================= -->
+  <!-- O1 Input Document, beside the flow from E1 into P1 -->
+  <g>
+    <path d="M 40 150 h 30 l 14 14 v 38 h -44 z" fill="#fffbe6"
+      stroke="#333333" stroke-width="1.5"/>
+    <path d="M 70 150 v 14 h 14" fill="none" stroke="#333333"
+      stroke-width="1.5"/>
+    <text x="62" y="222" font-size="13" text-anchor="middle"
+      fill="#111111">O1 Input</text>
+    <text x="62" y="238" font-size="13" text-anchor="middle"
+      fill="#111111">Document</text>
+  </g>
+
+  <!-- O2 Signed Document, on flow F1 -->
+  <g>
+    <path d="M 668 165 h 30 l 14 14 v 38 h -44 z" fill="#fffbe6"
+      stroke="#333333" stroke-width="1.5"/>
+    <path d="M 698 165 v 14 h 14" fill="none" stroke="#333333"
+      stroke-width="1.5"/>
+    <text x="690" y="237" font-size="13" text-anchor="middle"
+      fill="#111111">O2 Signed</text>
+    <text x="690" y="253" font-size="13" text-anchor="middle"
+      fill="#111111">Document</text>
+  </g>
+
+  <!-- O2 Signed Document, on flow F2 -->
+  <g>
+    <path d="M 1017 165 h 30 l 14 14 v 38 h -44 z" fill="#fffbe6"
+      stroke="#333333" stroke-width="1.5"/>
+    <path d="M 1047 165 v 14 h 14" fill="none" stroke="#333333"
+      stroke-width="1.5"/>
+    <text x="1039" y="237" font-size="13" text-anchor="middle"
+      fill="#111111">O2 Signed</text>
+    <text x="1039" y="253" font-size="13" text-anchor="middle"
+      fill="#111111">Document</text>
+  </g>
+
+  <!-- ================= Data flows (F) and other arrows ================= -->
+  <!-- E1 provides O1 to P1 -->
+  <line x1="130" y1="80" x2="135" y2="262" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- P1 -> P2 -> P3 -->
+  <line x1="200" y1="300" x2="248" y2="300" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="370" y1="300" x2="423" y2="300" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- S1 supplies private key to P3 -->
+  <line x1="485" y1="420" x2="485" y2="338" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="497" y="390" font-size="12" fill="#444444">private key</text>
+
+  <!-- F1: Transmit to Holder (C1 -> C2) -->
+  <line x1="545" y1="300" x2="828" y2="300" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="690" y="288" font-size="14" text-anchor="middle"
+    fill="#111111">F1 Transmit to Holder</text>
+
+  <!-- E2 uses P4 -->
+  <line x1="890" y1="80" x2="890" y2="262" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- P4 <-> S2 -->
+  <line x1="890" y1="338" x2="890" y2="418" stroke="#333333"
+    stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <!-- F2: Transmit to Verifier (C2 -> C3) -->
+  <line x1="950" y1="300" x2="1166" y2="300" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1058" y="288" font-size="14" text-anchor="middle"
+    fill="#111111">F2 Transmit to Verifier</text>
+
+  <!-- P5 reports to E3 -->
+  <line x1="1230" y1="262" x2="1230" y2="82" stroke="#333333"
+    stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1242" y="180" font-size="12" fill="#444444">verification result</text>
+</svg>

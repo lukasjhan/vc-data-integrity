@@ -1,0 +1,39 @@
+(function () {
+  var threat = {
+    "id": "T4",
+    "name": "Cross-Context Correlation via Proof Artifacts",
+    "desc": "Two or more [=E3|verifiers=] (or a [=E1|signer=] colluding with a [=E3|verifier=]) compare the [=O2|signed documents=] each has received and correlate them using the cryptographic artifacts those documents carry. Even when a [=E2|holder=] discloses only minimal document content, a static <code>proofValue</code> is effectively a globally unique identifier for the document, and the <code>verificationMethod</code>, <code>created</code> timestamp, and other proof metadata narrow the correlation further. Colluding parties can thereby link a [=E2|holder=]’s activities across unrelated contexts, building interaction profiles the [=E2|holder=] never consented to, and a [=E1|signer=] can discover where and when the documents it signed are being used. The collusion itself takes place entirely outside the systems this specification defines, so no specification text can prevent it; the specification can only reduce what the proof artifacts reveal.",
+    "response": [
+      {
+        "id": "R9",
+        "name": "Unlinkable Derived Proofs",
+        "type": "Reduce",
+        "desc": "Cryptosuites that support unlinkable derived proofs, such as <code>bbs-2023</code>, allow a [=E2|holder=] to present, for each [=F2|transmission to a verifier=], a freshly derived proof that is cryptographically unlinkable both to the original signature and to other derived proofs from the same [=O2|signed document=]. Residual correlation signals remain even then: the total number of signed statements, the pattern of which statement indexes are revealed, and any globally unique <code>@id</code> values in the disclosed content can still narrow the anonymity set, and the BBS signature scheme is not post-quantum secure."
+      },
+      {
+        "id": "R10",
+        "name": "Single-Use Documents",
+        "type": "Reduce",
+        "desc": "[=E1|Signers=] issue batches of single-use [=O2|signed documents=] so that each presentation to a [=E3|verifier=] carries a distinct <code>proofValue</code>, leaving colluding parties nothing stable to join on at the proof layer. This shifts cost onto issuance volume and does not address correlation through the disclosed document content itself."
+      },
+      {
+        "id": "R11",
+        "name": "Herd Privacy Practices",
+        "type": "Reduce",
+        "desc": "[=E1|Signers=] keep the correlatable surface of the documents they sign small and common to many holders: verification methods shared across large populations, <code>created</code> timestamps that are coarse-grained or omitted, and no per-document identifiers in proof metadata. Any individual [=O2|signed document=] is then indistinguishable from those of a large herd of holders, and correlation yields little."
+      },
+      {
+        "id": "R12",
+        "name": "Accept Where Linkability Is Required",
+        "type": "Accept",
+        "desc": "Some ecosystems require strong correlation by design (regulated audit trails, anti-money-laundering obligations, or the tracking of hazardous materials), and in those settings linkable proofs are the intended behavior rather than a defect. Deployments in such ecosystems accept this threat for the flows where linkability is mandated and disclose that acceptance to their participants."
+      }
+    ],
+    "elements": ["E1", "E2", "E3", "O2", "F2"],
+    "tags": ["privacy"],
+    "taxonomyName": "STRIDE",
+    "taxonomyClass": "Information Disclosure"
+  };
+
+  window.ThreatModel.register(threat);
+})();

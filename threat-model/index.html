@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Verifiable Credential Data Integrity Threat Model</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c"
+    class="remove"></script>
+  <script src="threats/threat-model.js"></script>
+
+  <script class='remove'>
+    // See https://github.com/w3c/respec/wiki/ for how to configure ReSpec
+    var respecConfig = {
+      specStatus: "NOTE",
+      group: "vc",
+      edDraftURI: "https://w3c.github.io/vc-data-integrity/threat-model/",
+      latestVersion: "https://www.w3.org/TR/vc-data-integrity/threat-model/",
+      github: {
+        repoURL: "https://github.com/w3c/vc-data-integrity/",
+        branch: "main"
+      },
+      editors: [{
+        name: "Manu Sporny",
+        company: "Digital Bazaar",
+        w3cid: 41758
+      }],
+      noRecTrack: "true",
+      maxTocLevel: 4,
+      threatModelTocSelector: "#threat-model-toc",
+      threatModelDetailsSelector: "#threat-model-details",
+      preProcess: [window.ThreatModel.render],
+      postProcess: [() => {
+        respecConfig.thisVersion = respecConfig.thisVersion + '/threat-model/';
+      }]
+    };
+  </script>
+  <script src="threats/outline.js"></script>
+  <link rel="stylesheet" href="threats/threat-model.css" />
+  <script src="threats/t1-signed-document-tampering.js"></script>
+  <script src="threats/t2-canonicalization-resource-exhaustion.js"></script>
+  <script src="threats/t3-signing-key-compromise.js"></script>
+  <script src="threats/t4-cross-context-correlation.js"></script>
+  <script src="threats/t5-crqc-breaks-signature-suites.js"></script>
+</head>
+
+<body>
+  <section id="abstract">
+    <p>
+This document describes a threat model for the
+<a href="https://www.w3.org/TR/vc-data-integrity/">Verifiable Credential
+Data Integrity</a> specification. It identifies and analyzes security and
+privacy threats specific to ecosystems that use Data Integrity proofs
+(created using cryptosuites such as ECDSA, EdDSA, and BBS) to secure the
+authenticity and integrity of documents such as verifiable credentials.
+    </p>
+  </section>
+  <section id="sotd">
+    <p>
+This threat model is a work in progress. It is published alongside the
+Verifiable Credential Data Integrity specification to inform implementers
+and ecosystem designers of the security and privacy considerations relevant
+to deployments of the specification and its associated cryptosuites.
+Feedback and proposed additions are welcome via the
+<a href="https://github.com/w3c/vc-data-integrity/issues">issue
+tracker</a>.
+    </p>
+  </section>
+  <section id="Introduction">
+    <h2>Introduction</h2>
+    <p>
+Threat modeling is a vital part of specification development. This
+document provides a threat model for the Verifiable Credential Data
+Integrity specification, which defines a mechanism for ensuring the
+authenticity and integrity of structured data documents. The mechanism
+uses cryptographic proofs that are created and verified through
+transformation, hashing, and proof serialization algorithms.
+    </p>
+    <p>
+This threat model follows the methodology described in the
+<a href="https://www.w3.org/TR/threat-modeling-guide/">W3C Threat
+Modeling Guide</a> and classifies threats using the STRIDE taxonomy.
+Threats are grouped into five categories:
+    </p>
+    <ul>
+      <li>
+<strong>Target Threats</strong> are threats the specification was designed
+to address.
+      </li>
+      <li>
+<strong>Implementation Threats</strong> are threats that implementers must
+handle; the specification leaves the choice of mitigation open.
+      </li>
+      <li>
+<strong>Deployment Threats</strong> are threats that arise from how systems
+are configured and operated.
+      </li>
+      <li>
+<strong>External Threats</strong> are real-world risks acknowledged as out
+of scope for this version of the specification.
+      </li>
+      <li>
+<strong>Dependency Threats</strong> are threats inherited from technologies
+the specification depends upon.
+      </li>
+    </ul>
+
+    <section id="threat-model-description">
+      <h3>Description</h3>
+      <p>
+The Verifiable Credential Data Integrity specification defines a mechanism
+for protecting the authenticity and integrity of documents through
+cryptographic proofs. A [=E1|signer=] takes an [=O1|input document=],
+[=P1|transforms=] it into a canonical form, [=P2|hashes=] the result, and
+[=P3|signs=] the hash using private key material held in a
+[=S1|security module=], producing a [=O2|signed document=] that carries one
+or more proofs. The [=O2|signed document=] is [=F1|transmitted to a
+holder=], who [=P4|stores=] it in [=S2|holder storage=] until it is needed
+and later [=F2|transmits it to a verifier=]. The [=E3|verifier=] runs the
+[=P5|verify=] process (re-transforming, re-hashing, and cryptographically
+checking each proof) to confirm that the document was created by the
+[=E1|signer=] and has not been modified since.
+      </p>
+      <p>
+The core property the specification provides is that a [=E3|verifier=]
+receiving a [=O2|signed document=] can determine, in an automated and
+cryptographically verifiable way, whether the information in the document
+is authentic. This holds even when the document arrives long after it was
+created, over untrusted networks, and through intermediaries such as
+[=E2|holders=], and it requires no contact with the [=E1|signer=]. The concrete cryptographic mechanisms are supplied by
+cryptosuites, such as those defined in the ECDSA, EdDSA, and BBS
+cryptosuite specifications, which instantiate the transformation, hashing,
+proof serialization, and proof verification algorithms that this threat
+model examines.
+      </p>
+      <p>
+For this threat model, we consider a minimal instantiation of a Data
+Integrity ecosystem consisting of three roles: the <strong>[=E1|Signer=]
+(E1)</strong> who creates [=O2|signed documents=], the
+<strong>[=E2|Holder=] (E2)</strong> who stores them and transmits them to
+other parties, and the <strong>[=E3|Verifier=] (E3)</strong> who checks
+their proofs and decides whether to accept them. In Verifiable Credential
+ecosystems, these roles correspond to the issuer, holder, and verifier.
+      </p>
+      <p class="note" role="note">
+<span class="marker">Note:</span> We do NOT model potential attackers as
+first-class elements, as over-characterizing attackers can lead to analysis
+bias that is better avoided.
+      </p>
+    </section>
+
+    <section id="threat-model-data-flow-diagram">
+      <h3>Data Flow Diagram for the Data Integrity Ecosystem</h3>
+      <p>
+The data flow diagram below illustrates the key elements and data flows in
+a minimal Data Integrity ecosystem. The diagram shows how an input document
+(O1) is transformed, hashed, and signed within the signing system (C1)
+using key material held in the security module (S1), producing a signed
+document (O2) that is [=F1|transmitted to the holder=] (E2), [=P4|stored=]
+in holder storage (S2), and later [=F2|transmitted to a verifier=] (E3),
+whose [=P5|verify=] process confirms its authenticity.
+      </p>
+
+      <img src="diagrams/dfd.svg"
+        alt="Data flow diagram showing three dashed system boundaries from
+left to right: the Signing System (C1) where the Signer (E1) provides an
+Input Document (O1) to the Transform (P1), Hash (P2), and Sign (P3)
+processes, with the Security Module (S1) supplying keys to Sign; the
+Holder System (C2) where the Holder (E2) uses the Store (P4) process and
+Holder Storage (S2); and the Verifier System (C3) where the Verifier (E3)
+uses the Verify (P5) process. The Signed Document (O2) flows from the
+Signing System to the Holder System via flow F1 and from the Holder System
+to the Verifier System via flow F2.">
+
+      <p>
+The following notation is used in the diagram description and dictionary:
+      </p>
+      <ul>
+        <li>
+<strong>E</strong> denotes an External Entity (a human or legal person
+outside the system boundary)
+        </li>
+        <li>
+<strong>P</strong> denotes a Process (a running algorithm that transforms
+data)
+        </li>
+        <li>
+<strong>F</strong> denotes a Data Flow (movement of data between elements)
+        </li>
+        <li>
+<strong>S</strong> denotes a Data Store (persistent or ephemeral storage)
+        </li>
+        <li>
+<strong>O</strong> denotes a Data Object (a self-contained, transferable
+artifact)
+        </li>
+        <li>
+<strong>C</strong> denotes a Contained System Boundary (a collection of
+elements under a single authority)
+        </li>
+      </ul>
+    </section>
+
+    <section id="threat-model-architecture-dictionary">
+      <h3>Dictionary</h3>
+      <style>
+        table.dictionary,
+        table.dictionary th,
+        table.dictionary td {
+          border: thin solid rgb(176, 176, 176);
+          border-collapse: collapse;
+          padding: 5px;
+        }
+        table.dictionary td.left {
+          width: 12em;
+        }
+      </style>
+      <table class="dictionary">
+        <tbody>
+          <tr>
+            <td class="left">
+              <dfn data-lt="E1|Signer">E1 Signer</dfn>
+            </td>
+            <td>
+An entity (such as a credential issuer, a notary, a supply-chain
+participant, or an automated service) that makes cryptographically
+verifiable statements by creating Data Integrity proofs over input
+documents. The signer controls a controller document, such as a CID or a
+DID document, that expresses its verification methods, and controls the
+private key material corresponding to those verification methods. In
+Verifiable Credential ecosystems, this role is typically played by the
+issuer.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="E2|Holder">E2 Holder</dfn>
+            </td>
+            <td>
+A person or organization that receives signed documents from a signer,
+stores them, and transmits them to verifiers. The holder typically operates
+a software application, such as a digital wallet, and controls when, to
+whom, and (when a selective disclosure cryptosuite is used) how much of a
+signed document is disclosed.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="E3|Verifier">E3 Verifier</dfn>
+            </td>
+            <td>
+An entity that receives a signed document and must determine whether the
+information it contains is authentic, meaning that it was created by the
+claimed signer and has not been modified since. The verifier runs the
+[=P5|Verify=] process and accepts or rejects the document based on the
+result and on its own policy, such as which cryptosuites and proof
+purposes it accepts.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="P1|Transform">P1 Transform</dfn>
+            </td>
+            <td>
+The process that converts an input document into the canonical form that is
+protected by a proof, using the transformation algorithm identified by the
+cryptosuite, for example, RDF Dataset Canonicalization (RDFC-1.0) or the
+JSON Canonicalization Scheme (JCS). Transformation ensures that the proof
+protects the information expressed by the document rather than one
+particular byte serialization of it. This process runs during both proof
+creation and proof verification.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="P2|Hash">P2 Hash</dfn>
+            </td>
+            <td>
+The process that applies the cryptographic hash function identified by the
+cryptosuite to the transformed data, producing the compact value over which
+the proof is computed. This process runs during both proof creation and
+proof verification.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="P3|Sign">P3 Sign</dfn>
+            </td>
+            <td>
+The process (called proof serialization by the specification) by which a
+signer produces a <code>proofValue</code> over the hashed data using
+private key material held in the [=S1|Security Module=], and assembles the
+complete proof, including its <code>type</code>, <code>cryptosuite</code>,
+<code>verificationMethod</code>, and <code>proofPurpose</code> properties
+and optional properties such as <code>created</code>, <code>expires</code>,
+<code>domain</code>, and <code>challenge</code>.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="P4|Store">P4 Store</dfn>
+            </td>
+            <td>
+The process by which a holder places a received signed document into
+[=S2|Holder Storage=] and retrieves it later for transmission to a
+verifier.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="P5|Verify">P5 Verify</dfn>
+            </td>
+            <td>
+The process by which a verifier checks a received signed document. It
+re-runs the cryptosuite’s transformation and hashing over the
+document, cryptographically verifies the <code>proofValue</code> using the
+verification method referenced by the proof, and confirms that the
+verification method is bound to its controller and expressed under the
+verification relationship matching the proof’s
+<code>proofPurpose</code>, that any expected <code>domain</code> and
+<code>challenge</code> values match, and that the document’s contexts
+match known-good values.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="F1|Transmit to Holder">F1 Transmit to Holder</dfn>
+            </td>
+            <td>
+The data flow by which a signed document travels from the
+[=C1|signing system=] to the [=C2|holder system=]. This flow crosses the
+trust boundary between the signer’s authority and the holder’s
+authority.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="F2|Transmit to Verifier">
+F2 Transmit to Verifier</dfn>
+            </td>
+            <td>
+The data flow by which a holder delivers a signed document to the
+[=C3|verifier system=]. This flow crosses the trust boundary between the
+holder’s authority and the verifier’s authority, and is typically
+the first point at which the document is exposed to a party whose interests
+differ from the holder’s.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="S1|Security Module">S1 Security Module</dfn>
+            </td>
+            <td>
+The protected key store within the [=C1|signing system=] (such as a
+hardware security module, a trusted platform module, or an
+operating-system keystore) that holds the signer’s private keys and
+performs signing operations without releasing private key material to
+application code.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="S2|Holder Storage">S2 Holder Storage</dfn>
+            </td>
+            <td>
+The persistent storage within the [=C2|holder system=] where signed
+documents are kept, typically the storage of a digital wallet
+application. This storage is accessible only to the holder’s software
+within the [=C2|holder system=] boundary.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="O1|Input Document">O1 Input Document</dfn>
+            </td>
+            <td>
+A document, expressed in a syntax such as JSON or JSON-LD, that contains
+the information to be protected but does not yet carry a proof. It is the
+input to the proof-creation pipeline that runs within the
+[=C1|signing system=].
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="O2|Signed Document">O2 Signed Document</dfn>
+            </td>
+            <td>
+An input document combined with one or more Data Integrity proofs. A signed
+document can carry multiple proofs, either as a proof set (independent
+proofs over the same data, enabling cryptographic layering) or as a proof
+chain, where later proofs also protect earlier ones. It is self-contained:
+it can be transmitted and stored without losing its integrity protection.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="C1|Signing System">C1 Signing System</dfn>
+            </td>
+            <td>
+The system boundary, typically a server or service operated by or for the
+signer, within which the [=P1|Transform=], [=P2|Hash=], and [=P3|Sign=]
+processes run and the [=S1|Security Module=] resides. Everything inside
+this boundary is under the signer’s authority.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="C2|Holder System">C2 Holder System</dfn>
+            </td>
+            <td>
+The system boundary, typically a mobile or desktop digital wallet
+application, within which the [=P4|Store=] process runs and
+[=S2|Holder Storage=] resides. Everything inside this boundary is under
+the holder’s control.
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <dfn data-lt="C3|Verifier System">C3 Verifier System</dfn>
+            </td>
+            <td>
+The system boundary, typically an automated verification service, within
+which the [=P5|Verify=] process runs. It is configured with the trust and
+policy decisions of the verifier, such as the cryptosuites, proof
+purposes, and document contexts it accepts.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <section id="threat-model-stakeholders">
+    <h2>Stakeholders</h2>
+
+    <h3>E1 Signer</h3>
+    <p>
+A signer is an entity that creates Data Integrity proofs over documents.
+Signers range from credential issuers (universities, government agencies,
+employers) to notaries, supply-chain participants, and automated services
+that make cryptographically verifiable statements. In Verifiable
+Credential ecosystems, the signer is most often the issuer of a
+credential.
+    </p>
+    <p>
+The signer’s primary goals are that only documents it intends to sign
+carry its proofs, that its private key material remains under its
+exclusive control, and that the documents it signs remain verifiable by
+the parties intended to rely on them. A signer whose keys are compromised,
+or whose proofs can be forged, suffers direct reputational, financial, and
+legal harm.
+    </p>
+
+    <h3>E2 Holder</h3>
+    <p>
+A holder is a person or organization that receives signed documents and
+transmits them to verifiers. In credential ecosystems, the holder is
+typically the subject of the credential (a student holding a diploma or an
+employee holding a professional certification) and stores signed
+documents in a digital wallet.
+    </p>
+    <p>
+The holder’s primary goal is that the documents they present are
+accepted by verifiers. Holders also have a strong interest in privacy:
+they do not want the act of presenting documents to enable signers,
+verifiers, or third parties to track their activities across contexts,
+and they want to disclose no more information than each interaction
+requires.
+    </p>
+
+    <h3>E3 Verifier</h3>
+    <p>
+A verifier is an entity that receives signed documents and must decide
+whether to rely on them. Verifiers range from automated services
+processing high volumes of documents (customs systems, age-verification
+services, hiring platforms) to individuals checking a single document.
+    </p>
+    <p>
+The verifier’s primary goal is to accept only documents that are
+authentic: created by the claimed signer, unmodified since signing, and
+used for the purpose and in the context the signer intended. Verifiers
+also have a strong interest in availability: verification must complete
+within their operational time budgets even when processing untrusted, and
+potentially malicious, input.
+    </p>
+  </section>
+
+  <section id="threat-model-threats">
+    <h2>Threats</h2>
+    <section id="threat-model-toc">
+    </section>
+    <section id="threat-model-details">
+    </section>
+  </section>
+
+  <section id="threat-model-contributing">
+    <h3>Contributing</h3>
+    <p>
+This threat model is maintained alongside the Verifiable Credential Data
+Integrity specification. Feedback, bug reports, and proposed additions are
+welcome via the <a
+href="https://github.com/w3c/vc-data-integrity/issues/new">issue
+tracker</a>.
+    </p>
+    <section id="threat-model-adding-a-threat">
+      <h4>Adding a Threat</h4>
+      <p>
+To add a new threat to the model, provide the following components:
+      </p>
+      <ol>
+        <li>A short, descriptive name</li>
+        <li>
+A unique ID (letter <strong>T</strong> followed by an integer,
+e.g., <strong>T6</strong>)
+        </li>
+        <li>
+A description of the threat with enough detail for readers to understand
+its scope
+        </li>
+        <li>
+One or more responses, each with a name, unique ID (letter <strong>R
+</strong> followed by an integer), response type (Eliminate, Reduce,
+Transfer, or Accept), and description
+        </li>
+        <li>
+A list of affected DFD elements drawn from the dictionary above
+        </li>
+        <li>
+The threat taxonomy used (e.g., STRIDE) and the threat class within
+that taxonomy
+        </li>
+      </ol>
+      <p>
+Create a JavaScript file following the pattern of the existing threat
+files, register it with <code>window.ThreatModel.register(threat)</code>,
+add a <code>&lt;script&gt;</code> tag in <code>index.html</code>, and add
+the threat ID to the appropriate category in
+<code>threats/outline.js</code>.
+      </p>
+    </section>
+  </section>
+
+</body>
+
+</html>
