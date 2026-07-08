@@ -6,6 +6,7 @@
   <title>Verifiable Credential Data Integrity Threat Model</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c"
     class="remove"></script>
+  <script src="threats/js-yaml.min.js"></script>
   <script src="threats/threat-model.js"></script>
 
   <script class='remove'>
@@ -34,13 +35,14 @@
       }]
     };
   </script>
-  <script src="threats/outline.js"></script>
   <link rel="stylesheet" href="threats/threat-model.css" />
-  <script src="threats/t1-signed-document-tampering.js"></script>
-  <script src="threats/t2-canonicalization-resource-exhaustion.js"></script>
-  <script src="threats/t3-signing-key-compromise.js"></script>
-  <script src="threats/t4-cross-context-correlation.js"></script>
-  <script src="threats/t5-crqc-breaks-signature-suites.js"></script>
+  <!--
+    The threat definitions are loaded at render time from
+    threats/outline.yaml and the YAML threat files it lists. When
+    previewing this document locally, serve the directory over HTTP (for
+    example, `npx http-server`); browsers cannot fetch() the YAML files
+    from a file:// URL.
+  -->
 </head>
 
 <body>
@@ -311,13 +313,13 @@ verifier.
             </td>
             <td>
 The process by which a verifier checks a received signed document. It
-re-runs the cryptosuite’s transformation and hashing over the
+re-runs the cryptosuite's transformation and hashing over the
 document, cryptographically verifies the <code>proofValue</code> using the
 verification method referenced by the proof, and confirms that the
 verification method is bound to its controller and expressed under the
-verification relationship matching the proof’s
+verification relationship matching the proof's
 <code>proofPurpose</code>, that any expected <code>domain</code> and
-<code>challenge</code> values match, and that the document’s contexts
+<code>challenge</code> values match, and that the document's contexts
 match known-good values.
             </td>
           </tr>
@@ -328,7 +330,7 @@ match known-good values.
             <td>
 The data flow by which a signed document travels from the
 [=C1|signing system=] to the [=C2|holder system=]. This flow crosses the
-trust boundary between the signer’s authority and the holder’s
+trust boundary between the signer's authority and the holder's
 authority.
             </td>
           </tr>
@@ -340,9 +342,9 @@ F2 Transmit to Verifier</dfn>
             <td>
 The data flow by which a holder delivers a signed document to the
 [=C3|verifier system=]. This flow crosses the trust boundary between the
-holder’s authority and the verifier’s authority, and is typically
+holder's authority and the verifier's authority, and is typically
 the first point at which the document is exposed to a party whose interests
-differ from the holder’s.
+differ from the holder's.
             </td>
           </tr>
           <tr>
@@ -352,7 +354,7 @@ differ from the holder’s.
             <td>
 The protected key store within the [=C1|signing system=] (such as a
 hardware security module, a trusted platform module, or an
-operating-system keystore) that holds the signer’s private keys and
+operating-system keystore) that holds the signer's private keys and
 performs signing operations without releasing private key material to
 application code.
             </td>
@@ -364,7 +366,7 @@ application code.
             <td>
 The persistent storage within the [=C2|holder system=] where signed
 documents are kept, typically the storage of a digital wallet
-application. This storage is accessible only to the holder’s software
+application. This storage is accessible only to the holder's software
 within the [=C2|holder system=] boundary.
             </td>
           </tr>
@@ -399,7 +401,7 @@ it can be transmitted and stored without losing its integrity protection.
 The system boundary, typically a server or service operated by or for the
 signer, within which the [=P1|Transform=], [=P2|Hash=], and [=P3|Sign=]
 processes run and the [=S1|Security Module=] resides. Everything inside
-this boundary is under the signer’s authority.
+this boundary is under the signer's authority.
             </td>
           </tr>
           <tr>
@@ -410,7 +412,7 @@ this boundary is under the signer’s authority.
 The system boundary, typically a mobile or desktop digital wallet
 application, within which the [=P4|Store=] process runs and
 [=S2|Holder Storage=] resides. Everything inside this boundary is under
-the holder’s control.
+the holder's control.
             </td>
           </tr>
           <tr>
@@ -442,7 +444,7 @@ Credential ecosystems, the signer is most often the issuer of a
 credential.
     </p>
     <p>
-The signer’s primary goals are that only documents it intends to sign
+The signer's primary goals are that only documents it intends to sign
 carry its proofs, that its private key material remains under its
 exclusive control, and that the documents it signs remain verifiable by
 the parties intended to rely on them. A signer whose keys are compromised,
@@ -459,7 +461,7 @@ employee holding a professional certification) and stores signed
 documents in a digital wallet.
     </p>
     <p>
-The holder’s primary goal is that the documents they present are
+The holder's primary goal is that the documents they present are
 accepted by verifiers. Holders also have a strong interest in privacy:
 they do not want the act of presenting documents to enable signers,
 verifiers, or third parties to track their activities across contexts,
@@ -475,7 +477,7 @@ processing high volumes of documents (customs systems, age-verification
 services, hiring platforms) to individuals checking a single document.
     </p>
     <p>
-The verifier’s primary goal is to accept only documents that are
+The verifier's primary goal is to accept only documents that are
 authentic: created by the claimed signer, unmodified since signing, and
 used for the purpose and in the context the signer intended. Verifiers
 also have a strong interest in availability: verification must complete
@@ -530,11 +532,12 @@ that taxonomy
         </li>
       </ol>
       <p>
-Create a JavaScript file following the pattern of the existing threat
-files, register it with <code>window.ThreatModel.register(threat)</code>,
-add a <code>&lt;script&gt;</code> tag in <code>index.html</code>, and add
-the threat ID to the appropriate category in
-<code>threats/outline.js</code>.
+Create a YAML file following the pattern of the existing threat files in
+the <code>threats/</code> directory, then register it in
+<code>threats/outline.yaml</code> by adding its filename to the
+<code>files</code> list and its threat ID to the appropriate category in
+the <code>categories</code> list. No changes to <code>index.html</code>
+are required.
       </p>
     </section>
   </section>

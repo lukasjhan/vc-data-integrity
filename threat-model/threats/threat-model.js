@@ -25,22 +25,74 @@
   var elementLabels = {};     // Populated by calling registerElements
 
 
-  // render(config, document)
-  // Renders all the threats, creating both a Table of Contents and 
-  // Threat Details sections
+  // loadDefinitions(config)
+  // Loads the threat model definitions from YAML files: first the outline
+  // (threat categories, element labels, and the list of threat files),
+  // then each threat file the outline lists. The outline location can be
+  // overridden with the threatModelOutline configuration option; threat
+  // files are resolved relative to the outline's directory.
   ///////////////////////////////////////////////////////////////////////
-  function render(config, document) {
+  async function loadDefinitions(config) {
+    if (typeof jsyaml === "undefined") {
+      throw new Error("js-yaml is not loaded; add a <script> tag for " +
+        "threats/js-yaml.min.js before threats/threat-model.js");
+    }
+
+    const outlinePath = config.threatModelOutline || "threats/outline.yaml";
+    const baseDir = outlinePath.slice(0, outlinePath.lastIndexOf("/") + 1);
+
+    const outline = jsyaml.load(await fetchText(outlinePath));
+    registerCategories(outline.categories);
+    registerElements(outline.elements);
+
+    const texts = await Promise.all(
+      outline.files.map(name => fetchText(baseDir + name)));
+    for (const text of texts) {
+      register(jsyaml.load(text));
+    }
+  }
+
+  async function fetchText(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`failed to fetch ${url}: ` +
+        `${response.status} ${response.statusText}`);
+    }
+    return response.text();
+  }
+
+  // render(config, document)
+  // Loads the YAML threat definitions, then renders all the threats,
+  // creating both a Table of Contents and Threat Details sections. The
+  // returned promise is awaited by ReSpec's preProcess hook.
+  ///////////////////////////////////////////////////////////////////////
+  async function render(config, document) {
     var renderLog = debug("render");
     console.log("Starting render");
 
     tocElement = document.querySelector(config.threatModelTocSelector);
+    detailsElement = document.querySelector(config.threatModelDetailsSelector);
+
+    try {
+      await loadDefinitions(config);
+    } catch (error) {
+      console.error("Failed to load threat model definitions.", error);
+      if (tocElement) {
+        tocElement.innerHTML = `<p class="issue">Failed to load the threat
+          model definitions (${error.message}). If you are viewing this
+          document from a <code>file://</code> URL, serve the directory over
+          HTTP instead (for example, <code>npx http-server</code>) so that
+          the YAML files can be fetched.</p>`;
+      }
+      return;
+    }
+
     if (!tocElement) {
       console.warn("No Threat Toc found. Selector: ${config.threatModelTocSelector}");
     } else {
       renderToc(threats, tocElement);
     }
 
-    detailsElement = document.querySelector(config.threatModelDetailsSelector);
     if (!detailsElement) {
       console.warn("No Threat Section found. Selector: ${config.threatModelDetailsSelector}");
     } else {
@@ -204,13 +256,13 @@
       }
 
       function renderDescription(threat) {
-        if (!threat.desc || threat.desc == "")
+        if (!threat.description || threat.description == "")
           return "";
 
         return `
         <tr>
           <td class="threat-description">
-            ${threat.desc}
+            ${threat.description}
           </td>
         </tr>
         `
@@ -277,7 +329,7 @@
           </tr>
           <tr>
         <td class="response-desc">
-          ${response.desc}
+          ${response.description}
         </td>
           </tr>
           `).join("")

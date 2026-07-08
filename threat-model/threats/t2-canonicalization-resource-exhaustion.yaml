@@ -1,0 +1,54 @@
+id: T2
+name: Canonicalization Resource Exhaustion
+elements: [P1, P5, O1, O2, C3]
+tags: [security]
+taxonomyName: STRIDE
+taxonomyClass: Denial of Service
+description: >-
+  Cryptosuites based on RDF Dataset Canonicalization [=P1|transform=]
+  documents through a canonical labeling algorithm whose worst-case
+  behavior, for maliciously crafted inputs, requires excessive computation,
+  a class of inputs known as poisoned datasets. An attacker submits such a
+  crafted [=O2|signed document=] to a [=C3|verifier system=], whose
+  [=P5|verify=] process must canonicalize the untrusted input before any
+  proof can be checked, consuming processor time and memory and denying
+  service to legitimate requests. Signing services are exposed in the same
+  way when they run the [=P1|transform=] process over an [=O1|input
+  document=] supplied by a third party. The Data Integrity specification
+  requires that this class of attack be mitigated, but leaves the selection
+  and configuration of mitigations (detection heuristics, resource limits,
+  timeouts) to implementers.
+response:
+  - id: R3
+    name: Poisoned Dataset Detection
+    type: Reduce
+    description: >-
+      Conforming RDF Dataset Canonicalization implementations are required
+      to detect potentially poisoned datasets and abort processing rather
+      than attempt to canonicalize them, and the canonicalization test
+      suite exercises this behavior. Implementers confirm that the
+      canonicalization library they deploy enforces these protections,
+      since bounded work is still consumed before detection triggers and
+      detection heuristics are necessarily imperfect.
+  - id: R4
+    name: Resource Limits and Timeouts
+    type: Reduce
+    description: >-
+      Implementations bound the processing applied to any single document
+      (input size limits, canonicalization timeouts, memory ceilings, and
+      rate limiting on document intake) so that a single malicious
+      [=O2|signed document=] cannot exhaust the resources of the
+      [=C3|verifier system=]. These are the same classes of defense applied
+      to any other untrusted input processed on the Web.
+  - id: R5
+    name: JCS-Based Cryptosuite Selection
+    type: Eliminate
+    description: >-
+      For deployments that do not require RDF semantics, selecting a
+      cryptosuite based on the JSON Canonicalization Scheme (such as
+      <code>eddsa-jcs-2022</code> or <code>ecdsa-jcs-2019</code>)
+      eliminates this specific attack vector, because JCS canonicalization
+      runs in time proportional to the size of its input. The trade-off is
+      the loss of protections that RDF-based canonicalization provides,
+      such as proofs that survive re-serialization of the document into
+      other compatible syntaxes.
