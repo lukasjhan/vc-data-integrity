@@ -324,7 +324,7 @@
 
         let responseHtml = responses.map(response => `
           <tr>
-        <td class="response-name">${response.id}. ${response.name}</td>
+        <td class="response-name">${response.id}. ${response.name}${response.type ? ` (${response.type})` : ""}</td>
           </tr>
           <tr>
         <td class="response-desc">
