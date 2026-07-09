@@ -5,7 +5,7 @@ tags: [security]
 taxonomyName: STRIDE
 taxonomyClass: Denial of Service
 description: >-
-  Cryptosuites based on RDF Dataset Canonicalization [=P1|transform=]
+  [=Cryptosuites=] based on RDF Dataset Canonicalization [=P1|transform=]
   documents through a canonical labeling algorithm whose worst-case
   behavior, for maliciously crafted inputs, requires excessive computation,
   a class of inputs known as poisoned datasets. An attacker submits such a
@@ -45,7 +45,7 @@ response:
     type: Eliminate
     description: >-
       For deployments that do not require RDF semantics, selecting a
-      cryptosuite based on the JSON Canonicalization Scheme (such as
+      [=cryptosuite=] based on the JSON Canonicalization Scheme (such as
       <code>eddsa-jcs-2022</code> or <code>ecdsa-jcs-2019</code>)
       eliminates this specific attack vector, because JCS canonicalization
       runs in time proportional to the size of its input. The trade-off is

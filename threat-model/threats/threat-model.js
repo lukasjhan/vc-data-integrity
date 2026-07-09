@@ -70,8 +70,8 @@
     var renderLog = debug("render");
     console.log("Starting render");
 
-    tocElement = document.querySelector(config.threatModelTocSelector);
-    detailsElement = document.querySelector(config.threatModelDetailsSelector);
+    tocElement = document.querySelector(".tm-toc");
+    detailsElement = document.querySelector(".tm-details");
 
     try {
       await loadDefinitions(config);
@@ -88,13 +88,13 @@
     }
 
     if (!tocElement) {
-      console.warn("No Threat Toc found. Selector: ${config.threatModelTocSelector}");
+      console.warn("No Threat Toc found. Selector: .tm-toc");
     } else {
       renderToc(threats, tocElement);
     }
 
     if (!detailsElement) {
-      console.warn("No Threat Section found. Selector: ${config.threatModelDetailsSelector}");
+      console.warn("No Threat Section found. Selector: .tm-details");
     } else {
       renderThreats(threats, detailsElement, tocElement);
     }
@@ -141,7 +141,7 @@
     }).join("");
 
     tocElement.innerHTML = `
-      <h2>Threat List</h2>
+      <h2 id="threat-list">Threat List</h2>
         ${tocHtml}
       `;
     return;
@@ -281,8 +281,7 @@
         if (!tocElement)
           return "";
 
-        var selector = `#${tocElement.id}`  // the toc element MUST have an id
-        return `<span class="index-link">[<a href="${selector}">Threat List</a>]</span>`;
+        return `<span class="index-link">[<a href="#threat-list">Threat List</a>]</span>`;
       }
 
       function renderImage(threat) {

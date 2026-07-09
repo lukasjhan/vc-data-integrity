@@ -22,7 +22,7 @@ response:
     name: Cryptographic Proof Verification
     type: Reduce
     description: >-
-      The [=P5|verify=] process re-executes the cryptosuite's
+      The [=P5|verify=] process re-executes the [=cryptosuite|cryptosuite's=]
       transformation and hashing over the received [=O2|signed document=]
       and cryptographically verifies the <code>proofValue</code> against
       the [=E1|signer=]'s public key, so any modification of the protected
@@ -39,7 +39,7 @@ response:
     name: Transformation Binds Proofs to Information Content
     type: Reduce
     description: >-
-      Cryptosuites [=P1|transform=] the document into a canonical form
+      [=Cryptosuites=] [=P1|transform=] the document into a canonical form
       before [=P2|hashing=] and signing, binding the proof to the
       information content of the document rather than to one specific byte
       serialization. Benign changes such as whitespace, property ordering,

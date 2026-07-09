@@ -44,11 +44,12 @@ response:
     name: Verification Relationship and Proof Purpose Validation
     type: Reduce
     description: >-
-      The Data Integrity specification requires that a verification method
-      be expressed under the verification relationship that matches a
+      The Data Integrity specification requires that a
+      [=verification method=] be expressed under the
+      [=verification relationship=] that matches a
       proof's declared <code>proofPurpose</code>, and that the [=P5|verify=]
-      process confirm both the binding between the verification method and
-      its controller and the match between the proof's purpose and the
+      process confirm both the binding between the [=verification method=]
+      and its [=controller=] and the match between the proof's purpose and the
       purpose the [=E3|verifier=] expects. Keys deployed for a single
       purpose therefore cannot be silently repurposed for another, which
       contains the blast radius of any single key compromise.
