@@ -769,10 +769,6 @@ li.sd-jwt-tab {
         <a href="https://www.w3.org/TR/vc-data-integrity/">W3C Verifiable Credential Data Integrity 1.0</a>의 한국어 번역본입니다.
       </p>
       <p>
-        <b>이 번역은 아직 시작되지 않았습니다.</b> 현재 이 문서는 영어 원문
-        그대로이며, 번역이 진행되는 대로 갱신됩니다.
-      </p>
-      <p>
         이 문서에 오역 및 오타를 포함할 수 있습니다.
         <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b>
         문의나 개선사항은
@@ -784,7 +780,7 @@ li.sd-jwt-tab {
       <p>
         원문작성일: 2025-05-15<br />
         최초번역일: 2026-07-17<br />
-        최종수정일: 2026-07-17<br />
+        최종수정일: 2026-07-18<br />
       </p>
       <dl>
         <dt><span style="font-weight: 500">편집자 (가나다순)</span>:</dt>
@@ -796,70 +792,62 @@ li.sd-jwt-tab {
         </dd>
       </dl>
     </div>
-    <section id="abstract" class="introductory"><h2>Abstract</h2>
+    <section id="abstract" class="introductory"><h2>요약</h2>
       <p>
-This specification describes mechanisms for ensuring the authenticity and
-integrity of <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a> and similar types of constrained digital
-documents using cryptography, especially through the use of digital
-signatures and related mathematical proofs.
+이 규격은 암호학을 사용하여, 특히 디지털 서명과 그와 관련된 수학적 증명의 사용을 통해,
+<a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한 크리덴셜</a> 및 그와 유사한 유형의 제약된 디지털 문서의 진정성과
+무결성을 보장하는 메커니즘을 기술한다.
       </p>
     </section>
 
-    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
-      document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
-      publications and the latest revision of this technical report can be found
-      in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> standards and drafts index</a> at
-      https://www.w3.org/TR/.</em></p>
+    <section id="sotd" class="introductory"><h2>현재 문서의 상태</h2><p><em>이 절은 발행 시점의 이 문서의 상태를 기술한다.
+      현재 <abbr title="World Wide Web Consortium">W3C</abbr> 발행물 목록과 이 기술 보고서의 최신 개정판은
+      https://www.w3.org/TR/ 의
+      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> 표준 및 초안 색인</a>에서
+      확인할 수 있다.</em></p>
       <p>
-Comments regarding this specification are welcome at any time.
-Please file issues directly on
-<a href="https://github.com/w3c/vc-data-integrity/issues/">GitHub</a>,
-or send them to
-<a href="mailto:public-vc-comments@w3.org">public-vc-comments@w3.org</a>
-if that is not possible.
-(<a href="mailto:public-vc-comments-request@w3.org?subject=subscribe">subscribe</a>,
-<a href="https://lists.w3.org/Archives/Public/public-vc-comments/">archives</a>).
+이 규격에 대한 의견은 언제든 환영한다.
+이슈는 <a href="https://github.com/w3c/vc-data-integrity/issues/">GitHub</a>에 직접
+올리거나, 그것이 불가능하면
+<a href="mailto:public-vc-comments@w3.org">public-vc-comments@w3.org</a>로
+보내주기 바란다.
+(<a href="mailto:public-vc-comments-request@w3.org?subject=subscribe">구독</a>,
+<a href="https://lists.w3.org/Archives/Public/public-vc-comments/">아카이브</a>).
       </p>
     <p>
-    This document was published by the <a href="https://www.w3.org/groups/wg/vc">Verifiable Credentials Working Group</a> as
-    a Recommendation using the
-        <a href="https://www.w3.org/policies/process/20231103/#recs-and-notes">Recommendation track</a>. 
+    이 문서는 <a href="https://www.w3.org/groups/wg/vc">Verifiable Credentials Working Group</a>이
+    <a href="https://www.w3.org/policies/process/20231103/#recs-and-notes">권고안 트랙(Recommendation track)</a>을
+    사용하여 권고안(Recommendation)으로 발행하였다. 
   </p><p>
-      <abbr title="World Wide Web Consortium">W3C</abbr> recommends the wide deployment of this specification as a standard for
-      the Web.
+      <abbr title="World Wide Web Consortium">W3C</abbr>는 이 규격을 웹의 표준으로 널리 배포할 것을 권장한다.
     </p><p>
-      A <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation is a specification that, after extensive
-      consensus-building, is endorsed by
-      <abbr title="World Wide Web Consortium">W3C</abbr> and its Members, and
-      has commitments from Working Group members to
-      <a href="https://www.w3.org/policies/patent-policy/#sec-Requirements">royalty-free licensing</a>
-      for implementations.
+      <abbr title="World Wide Web Consortium">W3C</abbr> 권고안이란 폭넓은 합의 형성을 거쳐
+      <abbr title="World Wide Web Consortium">W3C</abbr>와 그 회원사가 승인하고, 워킹 그룹 구성원들이 구현에 대해
+      <a href="https://www.w3.org/policies/patent-policy/#sec-Requirements">로열티 없는 라이선스</a>를
+      제공하기로 약속한 규격이다.
       
     </p><p>
     
-        This document was produced by a group
-        operating under the
-        <a href="https://www.w3.org/policies/patent-policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
-          Policy</a>.
+        이 문서는
+        <a href="https://www.w3.org/policies/patent-policy/"><abbr title="World Wide Web Consortium">W3C</abbr> 특허 정책(Patent
+          Policy)</a> 아래 운영되는 그룹이 작성하였다.
       
     
-                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/groups/wg/vc/ipr">public list of any patent disclosures</a>
-          made in connection with the deliverables of
-          the group; that page also includes
-          instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent which the individual believes contains
-          <a href="https://www.w3.org/policies/patent-policy/#def-essential">Essential Claim(s)</a>
-          must disclose the information in accordance with
-          <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                <abbr title="World Wide Web Consortium">W3C</abbr>는 그 그룹의 산출물과 관련하여 이루어진
+                <a rel="disclosure" href="https://www.w3.org/groups/wg/vc/ipr">특허 공개의 공개 목록</a>을
+          유지한다. 그 페이지에는 특허를 공개하는 방법에 대한 안내도 포함되어
+          있다. <a href="https://www.w3.org/policies/patent-policy/#def-essential">필수 청구항(Essential Claim)</a>을
+          포함한다고 믿는 특허를 실제로 알고 있는 개인은
+          <a href="https://www.w3.org/policies/patent-policy/#sec-Disclosure"><abbr title="World Wide Web Consortium">W3C</abbr> 특허 정책 6절</a>에
+          따라 그 정보를 공개해야 한다.
         
   </p><p>
-                      This document is governed by the
-                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">03 November 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>How it Works</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>Design Goals and Rationale</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>Terminology</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>Data Model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>Proofs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>Proof Sets</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>Proof Graphs</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>Proof Purposes</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>Resource Integrity</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>Contexts and Vocabularies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>Validating Contexts</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>Context Injection</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>Securing Data Losslessly</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>Datatypes</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>Relationship to Linked Data</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>Relationship to Verifiable Credentials</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>Cryptographic Suites</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>Algorithms</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>Processing Model</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>Add Proof</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>Add Proof Set/Chain</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>Verify Proof</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>Verify Proof Sets and Chains</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>Context Validation</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>Processing Errors</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>Security Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>Versioning Cryptography Suites</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>Protecting Application Developers</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>Conventions for Naming Cryptography Suites</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>Agility and Layering</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>Safer Abstractions</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>Transformations</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>Protected Information</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>Data Opacity</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>Verification Method Binding</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>Verification Relationship Validation</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>Proof Purpose Validation</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>Canonicalization Method Security</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>Canonicalization Method Correctness</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>Network Requests</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>Other Security Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+                      이 문서는
+                      <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">2023년 11월 3일자 <abbr title="World Wide Web Consortium">W3C</abbr> 프로세스 문서(Process Document)</a>의
+                      적용을 받는다.
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>How it Works</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>Design Goals and Rationale</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>Terminology</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>Data Model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>Proofs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>Proof Sets</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>Proof Graphs</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>Proof Purposes</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>Resource Integrity</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>Contexts and Vocabularies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>Validating Contexts</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>Context Injection</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>Securing Data Losslessly</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>Datatypes</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>Relationship to Linked Data</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>Relationship to Verifiable Credentials</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>Cryptographic Suites</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>Algorithms</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>Processing Model</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>Add Proof</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>Add Proof Set/Chain</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>Verify Proof</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>Verify Proof Sets and Chains</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>Context Validation</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>Processing Errors</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>Security Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>Versioning Cryptography Suites</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>Protecting Application Developers</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>Conventions for Naming Cryptography Suites</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>Agility and Layering</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>Safer Abstractions</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>Transformations</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>Protected Information</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>Data Opacity</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>Verification Method Binding</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>Verification Relationship Validation</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>Proof Purpose Validation</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>Canonicalization Method Security</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>Canonicalization Method Correctness</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>Network Requests</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>Other Security Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
-    <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>This section is non-normative.</em></p>
+    <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
       <p>
 This specification describes mechanisms for ensuring the authenticity and
@@ -895,7 +883,7 @@ tamper-evident.
         </li>
       </ul>
 
-      <section class="informative" id="how-it-works"><div class="header-wrapper"><h3 id="x1-1-how-it-works"><bdi class="secno">1.1 </bdi>How it Works</h3><a class="self-link" href="#how-it-works" aria-label="Permalink for Section 1.1"></a></div><p><em>This section is non-normative.</em></p>
+      <section class="informative" id="how-it-works"><div class="header-wrapper"><h3 id="x1-1-how-it-works"><bdi class="secno">1.1 </bdi>How it Works</h3><a class="self-link" href="#how-it-works" aria-label="Permalink for Section 1.1"></a></div><p><em>이 부분은 비규범적입니다.</em></p>
         
 
         <p>
@@ -1006,7 +994,7 @@ purposes of protecting the integrity of application data in transit and at rest.
 
       </section>
 
-      <section class="informative" id="design-goals-and-rationale"><div class="header-wrapper"><h3 id="x1-2-design-goals-and-rationale"><bdi class="secno">1.2 </bdi>Design Goals and Rationale</h3><a class="self-link" href="#design-goals-and-rationale" aria-label="Permalink for Section 1.2"></a></div><p><em>This section is non-normative.</em></p>
+      <section class="informative" id="design-goals-and-rationale"><div class="header-wrapper"><h3 id="x1-2-design-goals-and-rationale"><bdi class="secno">1.2 </bdi>Design Goals and Rationale</h3><a class="self-link" href="#design-goals-and-rationale" aria-label="Permalink for Section 1.2"></a></div><p><em>이 부분은 비규범적입니다.</em></p>
         
 
         <p>
@@ -1067,7 +1055,7 @@ the benefits of such an approach.
           </dd>
         </dl>
 
-      <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span><span class="issue-label">: Application of technology to broader use cases</span></div><p class="">
+      <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>참고</span><span class="issue-label">: Application of technology to broader use cases</span></div><p class="">
 While this specification primarily focuses on <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a>, the
 design of this technology is generalized, such that it can be used for other use
 cases. In these instances, implementers are expected to perform their own due
@@ -1381,7 +1369,7 @@ A proof can be added to a JSON document like the following:
 
         <div class="example" id="example-a-simple-json-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-simple-json-data-document">Example<bdi> 1</bdi></a><span class="example-title">: A simple JSON data document</span>
+    <a class="self-link" href="#example-a-simple-json-data-document">예시<bdi> 1</bdi></a><span class="example-title">: A simple JSON data document</span>
   </div> <pre class="nohighlight">{
   "myWebsite": "https://hello.world.example/"
 };</pre>
@@ -1397,7 +1385,7 @@ Algorithm (EdDSA).
 
         <div class="example" id="example-a-simple-signed-json-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-simple-signed-json-data-document">Example<bdi> 2</bdi></a><span class="example-title">: A simple signed JSON data document</span>
+    <a class="self-link" href="#example-a-simple-signed-json-data-document">예시<bdi> 2</bdi></a><span class="example-title">: A simple signed JSON data document</span>
   </div> <pre class="nohighlight">{
   "myWebsite": "https://hello.world.example/",
   "proof": {
@@ -1417,7 +1405,7 @@ Similarly, a proof can be added to a JSON-LD data document like the following:
 
         <div class="example" id="example-a-simple-json-ld-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-simple-json-ld-data-document">Example<bdi> 3</bdi></a><span class="example-title">: A simple JSON-LD data document</span>
+    <a class="self-link" href="#example-a-simple-json-ld-data-document">예시<bdi> 3</bdi></a><span class="example-title">: A simple JSON-LD data document</span>
   </div> <pre class="nohighlight">{
   "@context": {"myWebsite": "https://vocabulary.example/myWebsite"},
   "myWebsite": "https://hello.world.example/"
@@ -1434,7 +1422,7 @@ Signature Algorithm (ECDSA).
 
         <div class="example" id="example-a-simple-signed-json-ld-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-simple-signed-json-ld-data-document">Example<bdi> 4</bdi></a><span class="example-title">: A simple signed JSON-LD data document</span>
+    <a class="self-link" href="#example-a-simple-signed-json-ld-data-document">예시<bdi> 4</bdi></a><span class="example-title">: A simple signed JSON-LD data document</span>
   </div> <pre class="nohighlight">{
   "@context": [
     {"myWebsite": "https://vocabulary.example/myWebsite"},
@@ -1452,7 +1440,7 @@ Signature Algorithm (ECDSA).
 }</pre>
       </div>
 
-        <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Note</span><span class="issue-label">: Representing time values to individuals</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>참고</span><span class="issue-label">: Representing time values to individuals</span></div><p class="">
 This specification enables the expression of dates and times, such as through
 the <code>created</code> and <code>expires</code> properties. This information might be indirectly
 exposed to an individual if a proof is processed and is detected to be outside
@@ -1468,7 +1456,7 @@ representing time values to individuals.
 
         <div class="example" id="example-a-data-document-with-an-attached-proof-that-uses-the-expires-property">
         <div class="marker">
-    <a class="self-link" href="#example-a-data-document-with-an-attached-proof-that-uses-the-expires-property">Example<bdi> 5</bdi></a><span class="example-title">: A data document with an attached proof that uses the 'expires' property</span>
+    <a class="self-link" href="#example-a-data-document-with-an-attached-proof-that-uses-the-expires-property">예시<bdi> 5</bdi></a><span class="example-title">: A data document with an attached proof that uses the 'expires' property</span>
   </div> <pre class="nohighlight">{
   "@context": [
     {"myWebsite": "https://vocabulary.example/myWebsite"},
@@ -1505,7 +1493,7 @@ represented by associating a set of proofs with the <code>proof</code> key in a 
         </p>
         <div class="example" id="example-a-proof-set-in-a-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-proof-set-in-a-data-document">Example<bdi> 6</bdi></a><span class="example-title">: A proof set in a data document</span>
+    <a class="self-link" href="#example-a-proof-set-in-a-data-document">예시<bdi> 6</bdi></a><span class="example-title">: A proof set in a data document</span>
   </div> <pre class="nohighlight">{
   "@context": [
     {"myWebsite": "https://vocabulary.example/myWebsite"},
@@ -1546,7 +1534,7 @@ another proof with a <code>previousProof</code> value that identifies the previo
         </p>
         <div class="example" id="example-a-proof-chain-in-a-data-document">
         <div class="marker">
-    <a class="self-link" href="#example-a-proof-chain-in-a-data-document">Example<bdi> 7</bdi></a><span class="example-title">: A proof chain in a data document</span>
+    <a class="self-link" href="#example-a-proof-chain-in-a-data-document">예시<bdi> 7</bdi></a><span class="example-title">: A proof chain in a data document</span>
   </div> <pre class="nohighlight">{
   "@context": [
     {"myWebsite": "https://vocabulary.example/myWebsite"},
@@ -1707,7 +1695,7 @@ An example of a resource integrity protected object is shown below:
 
         <div class="example" id="example-an-integrity-protected-image-that-is-associated-with-an-object">
         <div class="marker">
-    <a class="self-link" href="#example-an-integrity-protected-image-that-is-associated-with-an-object">Example<bdi> 8</bdi></a><span class="example-title">: An integrity-protected image that is associated with an object</span>
+    <a class="self-link" href="#example-an-integrity-protected-image-that-is-associated-with-an-object">예시<bdi> 8</bdi></a><span class="example-title">: An integrity-protected image that is associated with an object</span>
   </div> <pre class="nohighlight">{
   ...
   "image": {
@@ -1784,7 +1772,7 @@ the JSON-LD serialization of the vocabulary URL as already dereferenced, where t
 the corresponding hash value below.
         </p>
 
-        <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>참고</span></div><p class="">
 Beyond the security terms defined by this specification, the
 <a href="https://w3id.org/security">https://w3id.org/security#</a> namespace
 also includes the terms defined in the <cite><a data-matched-text="[[[CID]]]" href="https://www.w3.org/TR/cid-1.0/">Controlled Identifiers v1.0</a></cite>&nbsp;[<cite><a class="bibref" data-link-type="biblio" href="#bib-cid" title="Controlled Identifiers v1.0">CID</a></cite>]
@@ -2088,7 +2076,7 @@ data documents through the use of mathematical proofs without sacrificing Linked
 Data features such as extensibility and composability.
         </p>
 
-        <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span><span class="issue-label">: Use of Linked Data is an optional feature</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>참고</span><span class="issue-label">: Use of Linked Data is an optional feature</span></div><p class="">
 While  this specification provides mechanisms to digitally sign Linked Data, the
 use  of Linked Data is not necessary to gain some of the advantages provided by
 this specification.
@@ -2327,7 +2315,7 @@ defined in Section <a href="#proofs" data-matched-text="[[[#proofs]]]" class="se
 their cryptographic suite.
         </p>
 
-        <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Note</span><span class="issue-label">: Design Patterns of Legacy Cryptographic Suites</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>참고</span><span class="issue-label">: Design Patterns of Legacy Cryptographic Suites</span></div><p class="">
 One of the design patterns seen in Data Integrity cryptosuites from
 2012 to 2020 was use of the <code>type</code> property to establish a specific type for a
 cryptographic suite; the
@@ -2529,7 +2517,7 @@ raised and <em class="rfc2119">SHOULD</em> convey an error type of
           </li>
           <li>
 Set <var>inputDocument</var>.<var>proof</var> to <var>matchingProofs</var>.
-            <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span><span class="issue-label">: This step protects the document and existing proofs</span></div><div class="">
+            <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>참고</span><span class="issue-label">: This step protects the document and existing proofs</span></div><div class="">
               <p>
 This step adds references to the <a data-link-type="dfn|abstract-op" href="#dfn-named-graph" class="internalDFN" id="ref-for-dfn-named-graph-2">named graphs</a>, as well as adding a copy of
 <em>all</em> the claims contained in the <a data-link-type="dfn|abstract-op" href="#dfn-proof-graph" class="internalDFN" id="ref-for-dfn-proof-graph-2">proof graphs</a>. The step is critical,
@@ -2733,7 +2721,7 @@ value that does not match the <code>id</code> attribute value of any element of
 Let <var>inputDocument</var> be a copy of <var>securedDocument</var> with the proof value
 removed and then set <var>inputDocument</var>.<var>proof</var> to <var>matchingProofs</var>.
 
-                <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span><span class="issue-label">: Secure document and previous proofs</span></div><p class="">
+                <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>참고</span><span class="issue-label">: Secure document and previous proofs</span></div><p class="">
 See the note in Step 6 of Section <a href="#add-proof-set-chain" data-matched-text="[[[#add-proof-set-chain]]]" class="sec-ref"><bdi class="secno">4.3 </bdi>Add Proof Set/Chain</a> to learn about
 what document properties and previous proofs this step secures.
                 </p></div>
@@ -3810,14 +3798,14 @@ calculation.
 
     </section>
 
-    <section class="appendix informative" id="understanding-proof-sets-and-proof-chains"><div class="header-wrapper"><h2 id="a-understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</h2><a class="self-link" href="#understanding-proof-sets-and-proof-chains" aria-label="Permalink for Appendix A."></a></div><p><em>This section is non-normative.</em></p>
+    <section class="appendix informative" id="understanding-proof-sets-and-proof-chains"><div class="header-wrapper"><h2 id="a-understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</h2><a class="self-link" href="#understanding-proof-sets-and-proof-chains" aria-label="Permalink for Appendix A."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
       <p>
 Sections <a href="#proof-sets" data-matched-text="[[[#proof-sets]]]" class="sec-ref"><bdi class="secno">2.1.1 </bdi>Proof Sets</a> and <a href="#proof-chains" data-matched-text="[[[#proof-chains]]]" class="sec-ref"><bdi class="secno">2.1.2 </bdi>Proof Chains</a> describe how multiple proofs
 can be expressed in a <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-12">secured data document</a>; that is, instead of a single
 <a data-link-type="dfn|abstract-op" href="#dfn-proof" class="internalDFN" id="ref-for-dfn-proof-5">proof</a> included in the <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-13">secured data document</a>, one can express multiple
-proofs in an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> as shown in <a href="#example-a-proof-set-in-a-data-document" data-matched-text="[[[#example-a-proof-set-in-a-data-document]]]" class="box-ref">Example<bdi> 6</bdi></a> and
-<a href="#example-a-proof-chain-in-a-data-document" data-matched-text="[[[#example-a-proof-chain-in-a-data-document]]]" class="box-ref">Example<bdi> 7</bdi></a>. The elements of this <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> are
+proofs in an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> as shown in <a href="#example-a-proof-set-in-a-data-document" data-matched-text="[[[#example-a-proof-set-in-a-data-document]]]" class="box-ref">예시<bdi> 6</bdi></a> and
+<a href="#example-a-proof-chain-in-a-data-document" data-matched-text="[[[#example-a-proof-chain-in-a-data-document]]]" class="box-ref">예시<bdi> 7</bdi></a>. The elements of this <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> are
 members of a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-2">proof set</a> and, optionally, a <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-2">proof chain</a>. The purpose of
 this section is to explain the intended use of each of these features and, in
 particular, their differing security properties. These differing security
@@ -3842,7 +3830,7 @@ When constructing a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" cl
       </p>
       <div class="example" id="example-symbolic-expression-of-how-a-proof-is-created">
         <div class="marker">
-    <a class="self-link" href="#example-symbolic-expression-of-how-a-proof-is-created">Example<bdi> 9</bdi></a><span class="example-title">: Symbolic expression of how a proof is created</span>
+    <a class="self-link" href="#example-symbolic-expression-of-how-a-proof-is-created">예시<bdi> 9</bdi></a><span class="example-title">: Symbolic expression of how a proof is created</span>
   </div> <pre class="nohighlight">{
   "type": "DataIntegrityProof",
   "cryptosuite": "eddsa-jcs-2022",
@@ -3864,7 +3852,7 @@ has been signed by the VP of Engineering, the CFO, and the CEO:
       </p>
       <div class="example" id="example-symbolic-expression-of-a-proof-set">
         <div class="marker">
-    <a class="self-link" href="#example-symbolic-expression-of-a-proof-set">Example<bdi> 10</bdi></a><span class="example-title">: Symbolic expression of a proof set</span>
+    <a class="self-link" href="#example-symbolic-expression-of-a-proof-set">예시<bdi> 10</bdi></a><span class="example-title">: Symbolic expression of a proof set</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3891,7 +3879,7 @@ approved something without the VP of Engineering's concurrence.
       </p>
       <div class="example" id="example-removal-of-a-signature-in-a-proof-set">
         <div class="marker">
-    <a class="self-link" href="#example-removal-of-a-signature-in-a-proof-set">Example<bdi> 11</bdi></a><span class="example-title">: Removal of a signature in a proof set</span>
+    <a class="self-link" href="#example-removal-of-a-signature-in-a-proof-set">예시<bdi> 11</bdi></a><span class="example-title">: Removal of a signature in a proof set</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3923,7 +3911,7 @@ Engineering signs the <a data-link-type="dfn|abstract-op" href="#dfn-input-docum
       </p>
       <div class="example" id="example-proof-chain-containing-first-proof-with-id-property-set">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-first-proof-with-id-property-set">Example<bdi> 12</bdi></a><span class="example-title">: Proof chain containing first proof with `id` property set</span>
+    <a class="self-link" href="#example-proof-chain-containing-first-proof-with-id-property-set">예시<bdi> 12</bdi></a><span class="example-title">: Proof chain containing first proof with `id` property set</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": {
@@ -3945,7 +3933,7 @@ is created:
       </p>
       <div class="example" id="example-proof-chain-containing-two-proofs">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-two-proofs">Example<bdi> 13</bdi></a><span class="example-title">: Proof chain containing two proofs</span>
+    <a class="self-link" href="#example-proof-chain-containing-two-proofs">예시<bdi> 13</bdi></a><span class="example-title">: Proof chain containing two proofs</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3978,7 +3966,7 @@ over the document which includes <code>urn:proof-1</code> and <code>urn:proof-2<
       </p>
       <div class="example" id="example-proof-chain-containing-three-proofs">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-three-proofs">Example<bdi> 14</bdi></a><span class="example-title">: Proof chain containing three proofs</span>
+    <a class="self-link" href="#example-proof-chain-containing-three-proofs">예시<bdi> 14</bdi></a><span class="example-title">: Proof chain containing three proofs</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -4004,7 +3992,7 @@ way, checking each proof in the chain.
       </p>
     </section>
 
-    <section class="appendix informative" id="revision-history"><div class="header-wrapper"><h2 id="b-revision-history"><bdi class="secno">B. </bdi>Revision History</h2><a class="self-link" href="#revision-history" aria-label="Permalink for Appendix B."></a></div><p><em>This section is non-normative.</em></p>
+    <section class="appendix informative" id="revision-history"><div class="header-wrapper"><h2 id="b-revision-history"><bdi class="secno">B. </bdi>Revision History</h2><a class="self-link" href="#revision-history" aria-label="Permalink for Appendix B."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
 
       <p>
@@ -4141,7 +4129,7 @@ Added requirement that <code>DataIntegrityProof</code> objects need to contain t
       </ul>
     </section>
 
-    <section class="informative" id="acknowledgements"><div class="header-wrapper"><h2 id="c-acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Section C."></a></div><p><em>This section is non-normative.</em></p>
+    <section class="informative" id="acknowledgements"><div class="header-wrapper"><h2 id="c-acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Section C."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
 
       <p>
