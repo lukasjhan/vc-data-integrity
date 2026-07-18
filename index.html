@@ -845,7 +845,7 @@ li.sd-jwt-tab {
                       이 문서는
                       <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">2023년 11월 3일자 <abbr title="World Wide Web Consortium">W3C</abbr> 프로세스 문서(Process Document)</a>의
                       적용을 받는다.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>변환</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>변환</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>프라이버시 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>연결 불가능성</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>선택적 공개</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>이전 증명</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>네트워크 요청 핑거프린팅</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>정규화 방법 프라이버시</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>기타 프라이버시 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>접근성 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>시간 값 표현하기</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
     <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>소개</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
@@ -3279,248 +3279,208 @@ Verifiable Credential Security Considerations</a> 절을 참고하라.
 
     </section>
 
-    <section id="privacy-considerations"><div class="header-wrapper"><h2 id="x6-privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</h2><a class="self-link" href="#privacy-considerations" aria-label="Permalink for Section 6."></a></div>
+    <section id="privacy-considerations"><div class="header-wrapper"><h2 id="x6-privacy-considerations"><bdi class="secno">6. </bdi>프라이버시 고려사항</h2><a class="self-link" href="#privacy-considerations" aria-label="Permalink for Section 6."></a></div>
       
       <p>
-The following section describes privacy considerations that developers
-implementing this specification should be aware of in order to create
-privacy enhancing software.
+다음 절은 이 규격을 구현하는 개발자가 프라이버시를 향상시키는 소프트웨어를 만들기 위해
+알아야 할 프라이버시 고려사항을 기술한다.
       </p>
 
-      <section id="unlinkability"><div class="header-wrapper"><h3 id="x6-1-unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</h3><a class="self-link" href="#unlinkability" aria-label="Permalink for Section 6.1"></a></div>
+      <section id="unlinkability"><div class="header-wrapper"><h3 id="x6-1-unlinkability"><bdi class="secno">6.1 </bdi>연결 불가능성</h3><a class="self-link" href="#unlinkability" aria-label="Permalink for Section 6.1"></a></div>
         
 
         <p>
-When a digitally-signed payload contains data that is seen by multiple
-verifiers, it becomes a point of correlation. An example of such data is a
-shopping loyalty card number. Correlatable data can be used for tracking
-purposes by verifiers, which can sometimes violate privacy expectations. The
-fact that some data can be used for tracking might not be immediately apparent.
-Examples of such correlatable data include, but are not limited to, a static
-digital signature or a cryptographic hash of an image.
+디지털 서명된 페이로드가 여러 검증자에게 보이는 데이터를 담으면, 그것은 상관관계의 지점이
+된다. 그러한 데이터의 예는 쇼핑 적립 카드 번호다. 상관 가능한 데이터는 검증자에 의해 추적
+목적으로 사용될 수 있으며, 이는 때때로 프라이버시 기대를 침해할 수 있다. 어떤 데이터가
+추적에 사용될 수 있다는 사실이 즉시 분명하지 않을 수 있다. 그러한 상관 가능한 데이터의
+예로는 정적 디지털 서명이나 이미지의 암호 해시가 있으나 이에 국한되지 않는다.
         </p>
 
         <p>
-It is possible to create a digitally-signed payload that does not have any
-correlatable tracking data while also providing some level of assurance that the
-payload is trustworthy for a given interaction. This characteristic is called
-<dfn class="lint-ignore" id="dfn-unlinkability" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">unlinkability</dfn> which ensures that no correlatable
-data are used in a digitally-signed payload while still providing some level of
-trust, the sufficiency of which has to be determined by each verifier.
+상관 가능한 추적 데이터를 전혀 갖지 않으면서도 주어진 상호작용에 대해 페이로드가
+신뢰할 만하다는 어느 정도의 확신을 제공하는 디지털 서명된 페이로드를 만드는 것이 가능하다.
+이 특성을 <dfn class="lint-ignore" id="dfn-unlinkability" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">연결 불가능성(unlinkability)</dfn>이라고 하며, 이는 디지털 서명된
+페이로드에 상관 가능한 데이터가 전혀 사용되지 않도록 보장하면서도 어느 정도의 신뢰를
+제공하는데, 그 충분성은 각 검증자가 판단해야 한다.
         </p>
 
         <p>
-It is important to understand that not all use cases require or even permit
-unlinkability. There are use cases where linkability and correlation are
-required due to regulatory or safety reasons, such as correlating organizations
-and individuals that are shipping and storing hazardous materials. Unlinkability
-is useful when there is an expectation of privacy for a particular interaction.
+모든 사용 사례가 연결 불가능성을 요구하거나 심지어 허용하는 것은 아니라는 점을 이해하는
+것이 중요하다. 위험 물질을 운송하고 저장하는 조직과 개인을 상관시키는 것과 같이, 규제나
+안전상의 이유로 연결 가능성과 상관관계가 요구되는 사용 사례가 있다. 연결 불가능성은 특정
+상호작용에 대해 프라이버시에 대한 기대가 있을 때 유용하다.
         </p>
 
         <p>
-There are at least two mechanisms that can provide some level of unlinkability.
-The first method is to ensure that no data value used in the message is ever
-repeated in a future message. The second is to ensure that any repeated data
-value provides adequate herd privacy such that it becomes practically impossible
-to correlate the entity that expects some level of privacy in the interaction.
+어느 정도의 연결 불가능성을 제공할 수 있는 메커니즘이 적어도 두 가지 있다. 첫 번째 방법은
+메시지에 사용된 어떤 데이터 값도 향후 메시지에서 결코 반복되지 않도록 보장하는 것이다.
+두 번째는 반복되는 어떤 데이터 값이든 적절한 무리 프라이버시(herd privacy)를 제공하여, 그
+상호작용에서 어느 정도의 프라이버시를 기대하는 엔티티를 상관시키는 것이 사실상 불가능해지도록
+보장하는 것이다.
         </p>
 
         <p>
-A variety of methods can be used to achieve unlinkability. These methods include
-ensuring that a message is a single use bearer token with no information that
-can be used for the purposes of correlation, using attributes that ensure an
-adequate level of herd privacy, and the use of cryptosuites that enable the
-entity presenting a message to regenerate new signatures while not compromising
-the trust in the message being presented.
+연결 불가능성을 달성하는 데 다양한 방법이 사용될 수 있다. 이러한 방법에는 메시지가 상관관계
+목적으로 사용될 수 있는 정보가 없는 일회용 무기명 토큰이 되도록 보장하는 것, 적절한 수준의
+무리 프라이버시를 보장하는 속성을 사용하는 것, 그리고 메시지를 제시하는 엔티티가 제시되는
+메시지에 대한 신뢰를 훼손하지 않으면서 새로운 서명을 재생성할 수 있게 하는 암호 스위트를
+사용하는 것이 포함된다.
         </p>
       </section>
 
-      <section id="selective-disclosure"><div class="header-wrapper"><h3 id="x6-2-selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</h3><a class="self-link" href="#selective-disclosure" aria-label="Permalink for Section 6.2"></a></div>
+      <section id="selective-disclosure"><div class="header-wrapper"><h3 id="x6-2-selective-disclosure"><bdi class="secno">6.2 </bdi>선택적 공개</h3><a class="self-link" href="#selective-disclosure" aria-label="Permalink for Section 6.2"></a></div>
         
 
         <p>
-Selective disclosure is a technique that enables the recipient of a
-previously-signed message (that is, a message signed by its creator) to reveal
-only parts of the message without disturbing the verifiability of those
-parts. For example, one might selectively disclose a digital driver's license for
-the purpose of renting a car. This could involve revealing only the issuing
-authority, license number, birthday, and authorized motor vehicle class from
-the license. Note that in this case, the license number is correlatable
-information, but some amount of privacy is preserved because the driver's
-full name and address are not shared.
+선택적 공개는 이전에 서명된 메시지(즉, 생성자가 서명한 메시지)의 수신자가 그 부분들의 검증
+가능성을 해치지 않으면서 메시지의 일부만 드러낼 수 있게 하는 기법이다. 예를 들어 자동차를
+빌릴 목적으로 디지털 운전면허증을 선택적으로 공개할 수 있다. 이는 면허증에서 발급 기관,
+면허 번호, 생일, 인가된 자동차 등급만 드러내는 것을 포함할 수 있다. 이 경우 면허 번호는
+상관 가능한 정보이지만, 운전자의 전체 이름과 주소가 공유되지 않기 때문에 어느 정도의
+프라이버시가 보존된다는 점에 유의하라.
         </p>
 
         <p>
-Not all software or cryptosuites are capable of providing selective disclosure.
-If the author of a message wishes it to be selectively disclosable by its
-recipient, then they need to enable selective disclosure on the specific
-message, and both need to use a capable cryptosuite. The author might also make
-it mandatory to disclose certain parts of the message. A recipient that wants to
-selectively disclose partial content of the message needs to utilize software
-that is able to perform the technique. An example of a cryptosuite that supports
-selective disclosure is <code>bbs-2023</code>.
+모든 소프트웨어나 암호 스위트가 선택적 공개를 제공할 수 있는 것은 아니다. 메시지 저작자가
+그 메시지를 수신자가 선택적으로 공개할 수 있게 하려면, 특정 메시지에 대해 선택적 공개를
+활성화해야 하고 양측 모두 그것이 가능한 암호 스위트를 사용해야 한다. 저작자는 또한 메시지의
+특정 부분을 공개하는 것을 필수로 만들 수도 있다. 메시지의 일부 내용을 선택적으로 공개하고자
+하는 수신자는 그 기법을 수행할 수 있는 소프트웨어를 활용해야 한다. 선택적 공개를 지원하는
+암호 스위트의 예는 <code>bbs-2023</code>이다.
         </p>
 
         <p>
-It is possible to selectively disclose information in a way that does not
-preserve unlinkability. For example, one might want to disclose the inspection
-results related to a shipment, which include the shipment identifier or lot
-number, which might have to be correlatable due to regulatory requirements.
-However, disclosure of the entire inspection result might not be required as
-selectively disclosing just the pass/fail status could be deemed adequate. For
-more information on disclosing information while preserving privacy, see Section
-<a href="#unlinkability" data-matched-text="[[[#unlinkability]]]" class="sec-ref"><bdi class="secno">6.1 </bdi>Unlinkability</a>.
+연결 불가능성을 보존하지 않는 방식으로 정보를 선택적으로 공개하는 것도 가능하다. 예를 들어
+어떤 화물에 관한 검사 결과를 공개하고자 할 수 있는데, 여기에는 규제 요구사항으로 인해
+상관 가능해야 할 수 있는 화물 식별자나 로트 번호가 포함된다. 그러나 합격/불합격 상태만
+선택적으로 공개하는 것으로 적절하다고 간주될 수 있으므로 전체 검사 결과의 공개는 필요하지
+않을 수 있다. 프라이버시를 보존하면서 정보를 공개하는 것에 대한 더 자세한 정보는
+<a href="#unlinkability" data-matched-text="[[[#unlinkability]]]" class="sec-ref"><bdi class="secno">6.1 </bdi>연결 불가능성</a> 절을 참고하라.
         </p>
       </section>
 
-      <section id="previous-proofs"><div class="header-wrapper"><h3 id="x6-3-previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</h3><a class="self-link" href="#previous-proofs" aria-label="Permalink for Section 6.3"></a></div>
+      <section id="previous-proofs"><div class="header-wrapper"><h3 id="x6-3-previous-proofs"><bdi class="secno">6.3 </bdi>이전 증명</h3><a class="self-link" href="#previous-proofs" aria-label="Permalink for Section 6.3"></a></div>
         
 
         <p>
-When using the <code>previousProof</code> feature defined in <a href="#proof-chains" data-matched-text="[[[#proof-chains]]]" class="sec-ref"><bdi class="secno">2.1.2 </bdi>Proof Chains</a>,
-implementations are required to digitally sign over one or more previous proofs,
-so as to include them in the secured payload. This inevitably exposes
-information related to each entity that added a previous proof.
+<a href="#proof-chains" data-matched-text="[[[#proof-chains]]]" class="sec-ref"><bdi class="secno">2.1.2 </bdi>증명 체인</a>에 정의된 <code>previousProof</code> 기능을 사용할 때,
+구현체는 하나 이상의 이전 증명을 보안 페이로드에 포함하기 위해 그것들에 대해 디지털 서명해야
+한다. 이는 불가피하게 이전 증명을 추가한 각 엔티티와 관련된 정보를 노출한다.
         </p>
         <p>
-At minimum, the <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-15">verification method</a> for the previous proof, such as a
-public key, is seen by the creator of the next proof in a proof chain. This
-can be a privacy concern if the creator of the previous proof did not intend
-to be included in a proof chain, but is an inevitable outcome when
-adding a non-repudiable digital signature to a document of any kind.
+최소한, 공개키와 같은 이전 증명의 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-15">검증 방법</a>은 증명 체인의 다음 증명
+생성자에게 보인다. 이전 증명의 생성자가 증명 체인에 포함될 의도가 없었다면 이는 프라이버시
+우려가 될 수 있지만, 어떤 종류의 문서에든 부인 방지 디지털 서명을 추가할 때는 불가피한
+결과다.
         </p>
         <p>
-It is possible to use more advanced cryptographic mechanisms, such as a
-<a href="https://en.wikipedia.org/wiki/Group_signature">group signature</a>,
-to hide the identity of the signer of a message,
-and it is also possible for a Data Integrity cryptographic suite
-to mitigate this privacy concern.
+메시지 서명자의 신원을 숨기기 위해 <a href="https://en.wikipedia.org/wiki/Group_signature">그룹 서명(group signature)</a>과
+같은 더 고급 암호학적 메커니즘을 사용하는 것이 가능하며, 데이터 무결성 암호 스위트가 이
+프라이버시 우려를 완화하는 것도 가능하다.
         </p>
       </section>
 
-      <section id="fingerprinting-network-requests"><div class="header-wrapper"><h3 id="x6-4-fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</h3><a class="self-link" href="#fingerprinting-network-requests" aria-label="Permalink for Section 6.4"></a></div>
+      <section id="fingerprinting-network-requests"><div class="header-wrapper"><h3 id="x6-4-fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>네트워크 요청 핑거프린팅</h3><a class="self-link" href="#fingerprinting-network-requests" aria-label="Permalink for Section 6.4"></a></div>
         
 
         <p>
-Fingerprinting concerns exist for any URL that might be loaded from the network
-during or after <a href="#verify-proof">proof verification</a>. This
-specification is designed in such a way that no network requests are necessary
-when verifying a proof on a <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-9">conforming secured document</a>. Readers might
-note, however, that <a href="#data-model">JSON-LD contexts</a> and
-<a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-16">verification methods</a> can contain resource URLs that might be retrieved
-over a network connection leading to fingerprinting concerns.
+<a href="#verify-proof">증명 검증</a> 중이나 후에 네트워크에서 로드될 수 있는 모든
+URL에 대해 핑거프린팅 우려가 존재한다. 이 규격은 <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-9">적합 보안 문서</a>의
+증명을 검증할 때 네트워크 요청이 필요하지 않도록 설계되었다. 그러나 독자는
+<a href="#data-model">JSON-LD 컨텍스트</a>와 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-16">검증 방법</a>이 네트워크 연결을
+통해 검색될 수 있어 핑거프린팅 우려로 이어지는 자원 URL을 담을 수 있음에 유의할 수 있다.
         </p>
 
         <p>
-For example, creators of <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-10">conforming secured documents</a> might craft unique
-per-document URLs for <a href="#data-model">JSON-LD contexts</a> and
-<a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-17">verification methods</a>. When verifying such a document, a verifier fetching
-that information from the network would reveal their interest in the
-<a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-11">conforming secured document</a> to the creator of the document, which might lead
-to a mismatch in privacy expectations for any entity that is not the creator of
-the document.
+예를 들어 <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-10">적합 보안 문서</a>의 생성자는 <a href="#data-model">JSON-LD 컨텍스트</a>와
+<a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-17">검증 방법</a>에 대해 문서마다 고유한 URL을 만들 수 있다. 그러한 문서를 검증할 때,
+그 정보를 네트워크에서 가져오는 검증자는 그 <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-11">적합 보안 문서</a>에 대한 자신의
+관심을 문서 생성자에게 드러내게 되며, 이는 문서 생성자가 아닌 모든 엔티티에 대해 프라이버시
+기대의 불일치로 이어질 수 있다.
         </p>
 
         <p>
-Implementers are urged to follow the guidance in Section <a href="#network-requests" data-matched-text="[[[#network-requests]]]" class="sec-ref"><bdi class="secno">5.14 </bdi>Network Requests</a>
-on URL caching and implementing defensively when fetching URLs from the network.
-Usage of techniques such as
+구현자는 URL 캐싱과 네트워크에서 URL을 가져올 때 방어적으로 구현하는 것에 관한
+<a href="#network-requests" data-matched-text="[[[#network-requests]]]" class="sec-ref"><bdi class="secno">5.14 </bdi>네트워크 요청</a> 절의 지침을 따를 것을 강력히 권장받는다. 요청을 하는
+클라이언트를 드러내지 않고 네트워크에서 자원을 검색하기 위해
 <a href="https://datatracker.ietf.org/doc/html/draft-ietf-ohai-ohttp">
-Oblivious HTTP</a> to retrieve resources from the network, without revealing the
-client that is making the request, are encouraged. Additionally, heuristics
-might be used to determine whether creators of <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-12">conforming secured documents</a>
-are using fingerprinting URLs in a way that might violate privacy expectations.
-These heuristics could be used to display warnings to entities that might
-process documents containing suspected fingerprinting URLs.
+Oblivious HTTP</a>와 같은 기법을 사용하는 것이 권장된다. 게다가 <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-12">적합 보안 문서</a>의
+생성자가 프라이버시 기대를 침해할 수 있는 방식으로 핑거프린팅 URL을 사용하고 있는지 판단하는
+데 휴리스틱이 사용될 수 있다. 이러한 휴리스틱은 핑거프린팅으로 의심되는 URL을 담은 문서를
+처리할 수 있는 엔티티에게 경고를 표시하는 데 사용될 수 있다.
         </p>
       </section>
 
-      <section id="canonicalization-method-privacy"><div class="header-wrapper"><h3 id="x6-5-canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</h3><a class="self-link" href="#canonicalization-method-privacy" aria-label="Permalink for Section 6.5"></a></div>
+      <section id="canonicalization-method-privacy"><div class="header-wrapper"><h3 id="x6-5-canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>정규화 방법 프라이버시</h3><a class="self-link" href="#canonicalization-method-privacy" aria-label="Permalink for Section 6.5"></a></div>
         
 
         <p>
-The way in which a transformation, namely canonicalization, is performed can
-affect the privacy characteristics of a system. Selecting the best
-canonicalization mechanism depends on the use case.
-This section attempts to provide simple guidance to help
-implementers pick between the two main canonicalization mechanisms referred to
-in this specification, namely JSON Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>] and
-RDF Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>], from a privacy perspective.
+정규화라는 변환이 수행되는 방식은 시스템의 프라이버시 특성에 영향을 줄 수 있다. 최선의
+정규화 메커니즘을 선택하는 것은 사용 사례에 달려 있다. 이 절은 구현자가 프라이버시 관점에서
+이 규격에서 언급하는 두 주요 정규화 메커니즘, 즉 JSON Canonicalization Scheme
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>]과 RDF 데이터셋 정규화 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>] 사이에서 선택하는 것을 돕기 위해
+간단한 지침을 제공하려 시도한다.
         </p>
         <p>
-If an application does not require performing a selective disclosure of
-information in a secured document, nor does it utilize JSON-LD, then JSON
-Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>] is an attractive approach.
+애플리케이션이 보안 문서에서 정보의 선택적 공개를 수행할 필요가 없고 JSON-LD를 활용하지도
+않는다면, JSON Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>]이 매력적인 접근법이다.
         </p>
         <p>
-If an application uses JSON-LD and might require selective disclosure
-of information in a secured document, then using a cryptography suite that
-uses RDF Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>] is an attractive
-approach.
+애플리케이션이 JSON-LD를 사용하고 보안 문서에서 정보의 선택적 공개를 요구할 수 있다면,
+RDF 데이터셋 정규화 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>]를 사용하는 암호 스위트를 사용하는 것이 매력적인
+접근법이다.
         </p>
         <p>
-Implementers are also advised that other selective disclosure mechanisms that
-perform no transformations are available, that secure the data by wrapping it in a
-cryptographic envelope instead of embedding the proof in the data, such as
-SD-JWTs [<cite><a class="bibref" data-link-type="biblio" href="#bib-sd-jwt" title="Selective Disclosure for JWTs (SD-JWT)">SD-JWT</a></cite>]. This approach has simplicity advantages in some use cases,
-at the expense of some of the benefits provided by the approach detailed in
-this specification.
+구현자는 또한 SD-JWT [<cite><a class="bibref" data-link-type="biblio" href="#bib-sd-jwt" title="Selective Disclosure for JWTs (SD-JWT)">SD-JWT</a></cite>]처럼, 증명을 데이터에 내장하는 대신 데이터를 암호학적
+봉투로 감싸서 보안하며 변환을 수행하지 않는 다른 선택적 공개 메커니즘도 이용 가능함을
+안내받는다. 이 접근법은 이 규격에 상세히 설명된 접근법이 제공하는 이점 일부를 희생하는 대신,
+일부 사용 사례에서 단순성 이점을 갖는다.
         </p>
       </section>
 
-      <section id="other-privacy-considerations"><div class="header-wrapper"><h3 id="x6-6-other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</h3><a class="self-link" href="#other-privacy-considerations" aria-label="Permalink for Section 6.6"></a></div>
+      <section id="other-privacy-considerations"><div class="header-wrapper"><h3 id="x6-6-other-privacy-considerations"><bdi class="secno">6.6 </bdi>기타 프라이버시 고려사항</h3><a class="self-link" href="#other-privacy-considerations" aria-label="Permalink for Section 6.6"></a></div>
         
 
         <p>
-Since the technology to secure documents described by this specification is
-generalized in nature, the privacy implications of its use might not be
-immediately apparent to readers. To understand the sort of privacy
-concerns one might need to consider in a complete software system, implementers
-are urged to read about how this technology is used in the
-<a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a> ecosystem [<cite><a class="bibref" data-link-type="biblio" href="#bib-vc-data-model-2.0" title="Verifiable Credentials Data Model v2.0">VC-DATA-MODEL-2.0</a></cite>]; see the section
-on <a href="https://www.w3.org/TR/vc-data-model-2.0/#privacy-considerations">
-Verifiable Credential Privacy Considerations</a> for more information.
+이 규격에 기술된 문서 보안 기술은 본질적으로 일반화되어 있으므로, 그 사용의 프라이버시적
+함의가 독자에게 즉시 분명하지 않을 수 있다. 완전한 소프트웨어 시스템에서 고려해야 할 수 있는
+프라이버시 우려의 종류를 이해하기 위해, 구현자는 이 기술이 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한 크리덴셜</a> 생태계
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-vc-data-model-2.0" title="Verifiable Credentials Data Model v2.0">VC-DATA-MODEL-2.0</a></cite>]에서 어떻게 사용되는지 읽어볼 것을 강력히 권장받는다. 더 자세한 정보는
+<a href="https://www.w3.org/TR/vc-data-model-2.0/#privacy-considerations">
+Verifiable Credential Privacy Considerations</a> 절을 참고하라.
         </p>
       </section>
 
     </section>
 
-    <section id="accessibility-considerations"><div class="header-wrapper"><h2 id="x7-accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</h2><a class="self-link" href="#accessibility-considerations" aria-label="Permalink for Section 7."></a></div>
+    <section id="accessibility-considerations"><div class="header-wrapper"><h2 id="x7-accessibility-considerations"><bdi class="secno">7. </bdi>접근성 고려사항</h2><a class="self-link" href="#accessibility-considerations" aria-label="Permalink for Section 7."></a></div>
       
       <p>
-The following section describes accessibility considerations that developers
-implementing this specification are urged to consider in order to ensure that
-their software is usable by people with different cognitive, motor, and visual
-needs. As a general rule, this specification is used by system software and does
-not directly expose individuals to information subject to accessibility
-considerations. However, there are instances where individuals might be
-indirectly exposed to information expressed by this specification and thus the
-guidance below is provided for those situations.
+다음 절은 이 규격을 구현하는 개발자가 자신의 소프트웨어를 서로 다른 인지적·운동적·시각적
+필요를 가진 사람들이 사용할 수 있도록 보장하기 위해 고려할 것을 강력히 권하는 접근성
+고려사항을 기술한다. 일반적으로 이 규격은 시스템 소프트웨어가 사용하며 개인을 접근성
+고려사항의 대상이 되는 정보에 직접 노출하지 않는다. 그러나 개인이 이 규격이 표현하는 정보에
+간접적으로 노출될 수 있는 경우가 있으므로, 그러한 상황을 위해 아래 지침을 제공한다.
       </p>
 
-      <section id="presenting-time-values"><div class="header-wrapper"><h3 id="x7-1-presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</h3><a class="self-link" href="#presenting-time-values" aria-label="Permalink for Section 7.1"></a></div>
+      <section id="presenting-time-values"><div class="header-wrapper"><h3 id="x7-1-presenting-time-values"><bdi class="secno">7.1 </bdi>시간 값 표현하기</h3><a class="self-link" href="#presenting-time-values" aria-label="Permalink for Section 7.1"></a></div>
         
         <p>
-This specification enables the expression of dates and times related to the
-validity period of cryptographic proofs. This information might be indirectly
-exposed to an individual if a proof is processed and is detected to be outside
-an allowable time range. When exposing these dates and times to an individual,
-implementers are urged to take into account
-<a href="https://www.w3.org/TR/vc-data-model-2.0/#representing-time">cultural normas and locales
-when representing dates and times</a> in display software. In addition to these
-considerations, presenting time values in a way that eases the cognitive burden
-on the individual receiving the information is a suggested best practice.
+이 규격은 암호학적 증명의 유효 기간과 관련된 날짜와 시간의 표현을 가능하게 한다. 이 정보는
+증명이 처리되어 허용되는 시간 범위를 벗어난 것으로 감지되면 개인에게 간접적으로 노출될 수
+있다. 이러한 날짜와 시간을 개인에게 노출할 때, 구현자는 표시 소프트웨어에서
+<a href="https://www.w3.org/TR/vc-data-model-2.0/#representing-time">날짜와 시간을 표현할 때의
+문화적 규범과 로케일</a>을 고려할 것을 강력히 권한다. 이러한 고려사항에 더하여, 정보를 받는
+개인의 인지적 부담을 덜어주는 방식으로 시간 값을 표현하는 것이 제안되는 모범 사례다.
         </p>
         <p>
-For example, when conveying the expiration date for a particular set of
-digitally signed information, implementers are urged to present the time of
-expiration using language that is easier to understand rather than language that
-optimizes for accuracy. Presenting the expiration time as "This ticket expired
-three days ago." is preferred over a phrase such as "This ticket expired on July
-25th 2023 at 3:43 PM." The former provides a relative time that is easier to
-comprehend than the latter time, which requires the individual to do the
-calculation in their head and presumes that they are capable of doing such a
-calculation.
+예를 들어 특정 디지털 서명 정보 집합의 만료 날짜를 전달할 때, 구현자는 만료 시각을 정확성에
+최적화된 표현보다는 이해하기 쉬운 표현을 사용하여 제시할 것을 강력히 권한다. 만료 시각을
+"이 티켓은 3일 전에 만료되었습니다."로 제시하는 것이 "이 티켓은 2023년 7월 25일 오후 3시
+43분에 만료되었습니다."와 같은 문구보다 선호된다. 전자는 후자의 시각보다 이해하기 쉬운
+상대적 시간을 제공하는데, 후자는 개인이 머릿속으로 계산을 해야 하고 그런 계산을 할 수 있다고
+가정한다.
         </p>
       </section>
 
