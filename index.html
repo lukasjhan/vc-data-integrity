@@ -845,7 +845,7 @@ li.sd-jwt-tab {
                       이 문서는
                       <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">2023년 11월 3일자 <abbr title="World Wide Web Consortium">W3C</abbr> 프로세스 문서(Process Document)</a>의
                       적용을 받는다.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>Transformations</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>Protected Information</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>Data Opacity</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>Verification Method Binding</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>Verification Relationship Validation</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>Proof Purpose Validation</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>Canonicalization Method Security</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>Canonicalization Method Correctness</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>Network Requests</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>Other Security Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>변환</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>Privacy Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>Unlinkability</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>Selective Disclosure</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>Previous Proofs</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>Fingerprinting Network Requests</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>Canonicalization Method Privacy</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>Other Privacy Considerations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>Accessibility Considerations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>Presenting Time Values</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
     <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>소개</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
@@ -2981,365 +2981,299 @@ the burden on application developers and to enhance the security of the system.
         </p>
       </section>
 
-      <section id="transformations"><div class="header-wrapper"><h3 id="x5-6-transformations"><bdi class="secno">5.6 </bdi>Transformations</h3><a class="self-link" href="#transformations" aria-label="Permalink for Section 5.6"></a></div>
+      <section id="transformations"><div class="header-wrapper"><h3 id="x5-6-transformations"><bdi class="secno">5.6 </bdi>변환</h3><a class="self-link" href="#transformations" aria-label="Permalink for Section 5.6"></a></div>
         
 
         <p>
-At times, it is beneficial to transform the data being protected during the
-cryptographic protection process. Such "in-line" transformation can enable a
-particular type of cryptographic protection to be agnostic to the data format it
-is carried in. For example, some Data Integrity cryptographic suites utilize RDF
-Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>] which transforms the initial
-representation into a canonical form [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-QUADS</a></cite>] that is then serialized,
-hashed, and digitally signed. As long as any syntax expressing the protected
-data can be transformed into this canonical form, the digital signature can be
-verified. This enables the same digital signature over the information to be
-expressed in JSON, CBOR, YAML, and other compatible syntaxes without having to
-create a cryptographic proof for every syntax.
+때때로 암호학적 보호 과정에서 보호되는 데이터를 변환하는 것이 유익하다. 그러한 "인라인"
+변환은 특정 유형의 암호학적 보호가 그것이 담긴 데이터 형식에 구애받지 않게 할 수 있다.
+예를 들어 일부 데이터 무결성 암호 스위트는 RDF 데이터셋 정규화
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>]를 활용하는데, 이는 초기 표현을 정규 형식 [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-QUADS</a></cite>]으로 변환한
+다음 이를 직렬화하고, 해싱하고, 디지털 서명한다. 보호되는 데이터를 표현하는 어떤 구문이든
+이 정규 형식으로 변환될 수 있는 한, 그 디지털 서명은 검증될 수 있다. 이는 정보에 대한
+동일한 디지털 서명을 모든 구문마다 암호학적 증명을 만들 필요 없이 JSON, CBOR, YAML,
+그리고 기타 호환 구문으로 표현할 수 있게 한다.
         </p>
         <p>
-Being able to express the same digital signature across a variety of syntaxes is
-beneficial because systems often have native data formats with which they
-operate. For example, some systems are written against JSON data, while others
-are written against CBOR data. Without transformation, systems that process
-their data internally as CBOR are required to store the digitally signed data
-structures as JSON (or vice-versa). This leads to double-storing data and can
-lead to increased security attack surface if the unsigned representation stored in
-databases accidentally deviates from the signed representation. By using
-transformations, the digital proof can live in the native data format to
-help prevent otherwise undetectable database drift over time.
+동일한 디지털 서명을 다양한 구문에 걸쳐 표현할 수 있는 것은 유익한데, 시스템은 흔히
+자신이 동작하는 네이티브 데이터 형식을 갖기 때문이다. 예를 들어 어떤 시스템은 JSON
+데이터를 대상으로 작성되고, 다른 시스템은 CBOR 데이터를 대상으로 작성된다. 변환이
+없으면, 데이터를 내부적으로 CBOR로 처리하는 시스템은 디지털 서명된 데이터 구조를 JSON으로
+(또는 그 반대로) 저장해야 한다. 이는 데이터를 이중으로 저장하게 만들고, 데이터베이스에
+저장된 서명되지 않은 표현이 서명된 표현으로부터 우발적으로 벗어나면 보안 공격 표면이
+늘어나게 할 수 있다. 변환을 사용하면 디지털 증명이 네이티브 데이터 형식 안에 존재할 수
+있어, 그렇지 않으면 감지되지 않을 데이터베이스 드리프트가 시간이 지나며 발생하는 것을
+막는 데 도움이 된다.
         </p>
         <p>
-This specification is designed to avoid requiring the duplication of signed
-information by utilizing "in-line" data transformations. Application developers are urged
-to work with cryptographically protected data in the native data format for
-their application and not separate storage of cryptographic proofs from the data
-being protected. Developers are also urged to regularly confirm that the
-cryptographically protected data has not been tampered with as it is written to
-and read from application storage.
+이 규격은 "인라인" 데이터 변환을 활용하여 서명된 정보의 복제를 요구하지 않도록 설계되었다.
+애플리케이션 개발자는 자신의 애플리케이션의 네이티브 데이터 형식으로 암호학적으로 보호된
+데이터를 다루고, 암호학적 증명을 보호되는 데이터로부터 분리하여 저장하지 않을 것을 강력히
+권장받는다. 개발자는 또한 암호학적으로 보호된 데이터가 애플리케이션 저장소에 쓰이고
+읽힐 때 변조되지 않았음을 정기적으로 확인할 것을 강력히 권장받는다.
         </p>
         <p class="advisement">
-Some transformations, such as RDF Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>], have
-mitigations for input data sets that can be used by attackers to consume
-excessive processing cycles. This class of attack is called
-<a href="https://www.w3.org/TR/rdf-canon/#dataset-poisoning">dataset poisoning</a>, and all
-modern RDF Dataset canonicalizers are required to detect these sorts of bad
-inputs and halt processing. The test suites for RDF Dataset Canonicalization
-includes such poisoned datasets to ensure that such mitigations exist in all
-conforming implementations. Generally speaking, cryptographic suite
-specifications that use transformations are required to mitigate these sorts of
-attacks, and implementers are urged to ensure that the software libraries that
-they use enforce these mitigations. These attacks are in the same general
-category as any resource starvation attack, such as HTTP clients that
-deliberately slow connections, thus starving connections on the server.
-Implementers are advised to consider these sorts of attacks when implementing
-defensive security strategies.
+RDF 데이터셋 정규화 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>]와 같은 일부 변환은, 공격자가 과도한 처리
+사이클을 소비하는 데 사용할 수 있는 입력 데이터셋에 대한 완화책을 갖추고 있다. 이 부류의
+공격을 <a href="https://www.w3.org/TR/rdf-canon/#dataset-poisoning">데이터셋 오염(dataset poisoning)</a>이라고 하며, 모든
+현대 RDF 데이터셋 정규화기는 이런 종류의 잘못된 입력을 감지하고 처리를 중단해야 한다.
+RDF 데이터셋 정규화의 테스트 스위트는 그러한 완화책이 모든 적합 구현체에 존재하도록
+보장하기 위해 그러한 오염된 데이터셋을 포함한다. 일반적으로 말해, 변환을 사용하는 암호
+스위트 규격은 이런 종류의 공격을 완화해야 하며, 구현자는 자신이 사용하는 소프트웨어
+라이브러리가 이러한 완화책을 강제하는지 확인할 것을 강력히 권장받는다. 이러한 공격은
+연결을 고의로 느리게 하여 서버의 연결을 고갈시키는 HTTP 클라이언트와 같은 모든 자원 고갈
+공격과 같은 일반 범주에 속한다. 구현자는 방어적 보안 전략을 구현할 때 이런 종류의 공격을
+고려할 것을 권한다.
         </p>
       </section>
 
-      <section id="protected-information"><div class="header-wrapper"><h3 id="x5-7-protected-information"><bdi class="secno">5.7 </bdi>Protected Information</h3><a class="self-link" href="#protected-information" aria-label="Permalink for Section 5.7"></a></div>
+      <section id="protected-information"><div class="header-wrapper"><h3 id="x5-7-protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</h3><a class="self-link" href="#protected-information" aria-label="Permalink for Section 5.7"></a></div>
         
 
         <p>
-The data that is protected by any <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-14">data integrity proof</a> is the
-<a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-2">transformed data</a>. <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-3">Transformed data</a>
-is generated by a <a data-link-type="dfn|abstract-op" href="#dfn-transformation-algorithm" class="internalDFN" id="ref-for-dfn-transformation-algorithm-2">transformation algorithm</a> that is specified by a
-particular <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-12">cryptosuite</a>. This protection mechanism differs from some
-more traditional digital signature mechanisms that do not perform any sort of
-<a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-4">transformation</a> on the input data. The benefits of <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-5">transformation</a> are
-detailed in Section <a href="#transformations" data-matched-text="[[[#transformations]]]" class="sec-ref"><bdi class="secno">5.6 </bdi>Transformations</a>.
+임의의 <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-14">데이터 무결성 증명</a>이 보호하는 데이터는 <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-2">변환된 데이터</a>다.
+<a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-3">변환된 데이터</a>는 특정 <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-12">암호 스위트</a>가 지정하는 <a data-link-type="dfn|abstract-op" href="#dfn-transformation-algorithm" class="internalDFN" id="ref-for-dfn-transformation-algorithm-2">변환 알고리즘</a>에
+의해 생성된다. 이 보호 메커니즘은 입력 데이터에 어떤 종류의 <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-4">변환</a>도 수행하지
+않는 일부 더 전통적인 디지털 서명 메커니즘과 다르다. <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-5">변환</a>의 이점은
+<a href="#transformations" data-matched-text="[[[#transformations]]]" class="sec-ref"><bdi class="secno">5.6 </bdi>변환</a> 절에 상세히 설명되어 있다.
         </p>
 
         <p>
-For example, <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-13">cryptosuites</a> such as
-<a href="https://www.w3.org/TR/vc-di-ecdsa/#ecdsa-jcs-2019">ecdsa-jcs-2019</a> and
-<a href="https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022">eddsa-jcs-2022</a> use the
-<cite><a data-matched-text="[[[?RFC8785]]]" href="https://www.rfc-editor.org/rfc/rfc8785">JSON Canonicalization Scheme (JCS)</a></cite> to <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-6">transform</a> the data to canonicalized JSON,
-which is then cryptographically hashed and digitally signed. One benefit of this
-approach is that adding or removing formatting characters that do not impact the
-meaning of the information being signed, such as spaces, tabs, and newlines,
-does not invalidate the digital signature. More traditional digital signature
-mechanisms do not have this capability.
+예를 들어 <a href="https://www.w3.org/TR/vc-di-ecdsa/#ecdsa-jcs-2019">ecdsa-jcs-2019</a>와
+<a href="https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022">eddsa-jcs-2022</a> 같은 <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-13">암호 스위트</a>는
+<cite><a data-matched-text="[[[?RFC8785]]]" href="https://www.rfc-editor.org/rfc/rfc8785">JSON Canonicalization Scheme (JCS)</a></cite>를 사용하여 데이터를 정규화된 JSON으로 <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-6">변환</a>한
+다음, 이를 암호학적으로 해싱하고 디지털 서명한다. 이 접근법의 한 가지 이점은 공백, 탭,
+개행처럼 서명되는 정보의 의미에 영향을 주지 않는 서식 문자를 추가하거나 제거해도 디지털
+서명이 무효화되지 않는다는 것이다. 더 전통적인 디지털 서명 메커니즘은 이 능력이 없다.
         </p>
 
         <p>
-Other <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-14">cryptosuites</a> such as
-<a href="https://www.w3.org/TR/vc-di-ecdsa/#ecdsa-rdfc-2019">ecdsa-rdfc-2019</a> and
-<a href="https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022">eddsa-rdfc-2022</a> use
-<cite><a data-matched-text="[[[?RDF-CANON]]]" href="https://www.w3.org/TR/rdf-canon/">RDF Dataset Canonicalization</a></cite> to <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-7">transform</a> the data to canonicalized
-N-Quads [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-QUADS</a></cite>], which is then cryptographically hashed and digitally
-signed. One benefit of this approach is that the cryptographic signature is
-portable to a variety of different syntaxes, such as JSON, YAML, and CBOR,
-without invalidating the signature. More traditional cryptographic signature
-mechanisms do not have this capability.
+<a href="https://www.w3.org/TR/vc-di-ecdsa/#ecdsa-rdfc-2019">ecdsa-rdfc-2019</a>와
+<a href="https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022">eddsa-rdfc-2022</a> 같은 다른 <a data-link-type="dfn|abstract-op" href="#dfn-cryptosuite" class="internalDFN" id="ref-for-dfn-cryptosuite-14">암호 스위트</a>는
+<cite><a data-matched-text="[[[?RDF-CANON]]]" href="https://www.w3.org/TR/rdf-canon/">RDF Dataset Canonicalization</a></cite>을 사용하여 데이터를 정규화된 N-Quads
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-QUADS</a></cite>]로 <a data-link-type="dfn|abstract-op" data-lt="transformation" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-7">변환</a>한 다음, 이를 암호학적으로 해싱하고 디지털 서명한다.
+이 접근법의 한 가지 이점은 암호학적 서명이 서명을 무효화하지 않고 JSON, YAML, CBOR과
+같은 다양한 구문으로 이식 가능하다는 것이다. 더 전통적인 암호학적 서명 메커니즘은 이 능력이
+없다.
         </p>
 
         <p>
-Implementers and developers are urged to not trust information
-that contains a <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-15">data integrity proof</a> unless the proof has been <a data-link-type="dfn|abstract-op" href="#dfn-verified" class="internalDFN" id="ref-for-dfn-verified-2">verified</a>
-and the verified data is provided in a return value from a software library
-that has confirmed that all data returned has been successfully protected.
+구현자와 개발자는 증명이 <a data-link-type="dfn|abstract-op" href="#dfn-verified" class="internalDFN" id="ref-for-dfn-verified-2">검증</a>되고, 반환된 모든 데이터가 성공적으로
+보호되었음을 확인한 소프트웨어 라이브러리의 반환값으로 그 검증된 데이터가 제공되지 않는
+한, <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-15">데이터 무결성 증명</a>을 담은 정보를 신뢰하지 않을 것을 강력히 권장받는다.
         </p>
 
       </section>
 
-      <section id="data-opacity"><div class="header-wrapper"><h3 id="x5-8-data-opacity"><bdi class="secno">5.8 </bdi>Data Opacity</h3><a class="self-link" href="#data-opacity" aria-label="Permalink for Section 5.8"></a></div>
+      <section id="data-opacity"><div class="header-wrapper"><h3 id="x5-8-data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</h3><a class="self-link" href="#data-opacity" aria-label="Permalink for Section 5.8"></a></div>
         
 
         <p>
-The inspectability of application data has effects on system efficiency and
-developer productivity. When cryptographically protected application data, such
-as base-encoded binary data, is not easily processed by application subsystems,
-such as databases, it increases the effort of working with the cryptographically
-protected information. For example, a cryptographically protected payload that
-can be natively stored and indexed by a database will result in a simpler system
-that:
+애플리케이션 데이터의 검사 가능성은 시스템 효율성과 개발자 생산성에 영향을 준다. base
+인코딩된 이진 데이터와 같이 암호학적으로 보호된 애플리케이션 데이터가 데이터베이스와 같은
+애플리케이션 하위 시스템에 의해 쉽게 처리되지 않으면, 암호학적으로 보호된 정보를 다루는
+노력이 늘어난다. 예를 들어 데이터베이스가 네이티브로 저장하고 색인할 수 있는 암호학적으로
+보호된 페이로드는 다음과 같은 더 단순한 시스템을 낳는다:
         </p>
 
         <ul>
           <li>
-benefits from utilizing existing industry-standard database features with no
-changes to the protected information,
+보호되는 정보에 변경 없이 기존 업계 표준 데이터베이스 기능을 활용하는 이점을 얻고,
           </li>
           <li>
-avoids the complexity of duplicating data where one copy of the data preserves
-the message and digital signature, while the other copy only stores and indexes
-the message and is what drives system behaviour,
+한 사본은 메시지와 디지털 서명을 보존하고 다른 사본은 메시지만 저장·색인하며 시스템 동작을
+구동하는, 데이터를 복제하는 복잡성을 피하고,
           </li>
           <li>
-avoids the complexity of bespoke solutions that have to structurally modify
-the protected information, such as serializing and deserializing nested
-digitally signed data that has multiple nested base-encoded payloads.
+여러 중첩된 base 인코딩 페이로드를 가진 중첩된 디지털 서명 데이터를 직렬화·역직렬화하는
+것과 같이, 보호되는 정보를 구조적으로 수정해야 하는 맞춤형 해법의 복잡성을 피한다.
           </li>
         </ul>
 
         <p>
-Similarly, a cryptographically protected payload that can be processed by
-multiple upstream networked systems increases the ability to properly layer
-security architectures. For example, if upstream systems do not have to
-repeatedly decode the incoming payload, it increases the ability for a system to
-distribute processing load by specializing upstream subsystems to actively
-combat attacks. While a digital signature needs to always be checked before
-taking substantive action, other upstream checks can be performed on transparent
-payloads — such as identifier-based rate limiting, signature expiration
-checking, or nonce/challenge checking — to reject obviously bad requests.
+마찬가지로, 여러 상류(upstream) 네트워크 시스템이 처리할 수 있는 암호학적으로 보호된
+페이로드는 보안 아키텍처를 적절히 계층화하는 능력을 높인다. 예를 들어 상류 시스템이 들어오는
+페이로드를 반복적으로 디코딩할 필요가 없으면, 공격에 능동적으로 대응하도록 상류 하위 시스템을
+특화함으로써 시스템이 처리 부하를 분산하는 능력이 높아진다. 실질적 행위를 취하기 전에 디지털
+서명은 항상 확인되어야 하지만, 식별자 기반 속도 제한, 서명 만료 확인, nonce/challenge 확인
+같은 다른 상류 확인은 명백히 잘못된 요청을 거부하기 위해 투명한 페이로드에 대해 수행될 수
+있다.
         </p>
         <p>
-Additionally, if a developer is not able to easily view data in a system, the
-ability to easily audit or debug system correctness is hampered. For example,
-requiring application developers to cut-and-paste base-encoded application data
-makes development more challenging and increases the chances that obvious bugs
-will be missed because every message needs to go through a manually operated
-base-decoding tool.
+게다가 개발자가 시스템의 데이터를 쉽게 볼 수 없으면, 시스템 정확성을 쉽게 감사하거나
+디버깅하는 능력이 저해된다. 예를 들어 애플리케이션 개발자에게 base 인코딩된 애플리케이션
+데이터를 잘라 붙이도록 요구하면 개발이 더 어려워지고, 모든 메시지가 수동으로 조작되는 base
+디코딩 도구를 거쳐야 하기 때문에 명백한 버그가 놓칠 가능성이 높아진다.
         </p>
         <p>
-There are times, however, where the correct design decision is to make data
-opaque. Data that does not need to be processed by other application subsystems,
-as well as data that does not need to be modified or accessed by an application
-developer, can be serialized into opaque formats. Examples include digital
-signature values, cryptographic key parameters, and other data fields that only
-need to be accessed by a cryptographic library and need not be modified by the
-application developer. There are also examples where data opacity is appropriate
-when the underlying subsystem does not expose the application developer to the
-underlying complexity of the opaque data, such as databases that perform
-encryption at rest. In these cases, the application developer continues to
-develop against transparent application data formats while the database manages
-the complexity of encrypting and decrypting the application data to and from
-long-term storage.
+그러나 데이터를 불투명하게 만드는 것이 올바른 설계 결정인 경우도 있다. 다른 애플리케이션
+하위 시스템이 처리할 필요가 없는 데이터뿐 아니라 애플리케이션 개발자가 수정하거나 접근할
+필요가 없는 데이터는 불투명한 형식으로 직렬화될 수 있다. 예로는 디지털 서명 값, 암호 키
+매개변수, 그리고 암호 라이브러리만 접근하면 되고 애플리케이션 개발자가 수정할 필요가 없는
+기타 데이터 필드가 있다. 또한 저장 시 암호화를 수행하는 데이터베이스와 같이, 하부 하위
+시스템이 애플리케이션 개발자를 불투명한 데이터의 하부 복잡성에 노출하지 않을 때 데이터
+불투명성이 적절한 예도 있다. 이러한 경우 애플리케이션 개발자는 투명한 애플리케이션 데이터
+형식을 대상으로 계속 개발하고, 데이터베이스는 애플리케이션 데이터를 장기 저장소로 암호화하고
+그로부터 복호화하는 복잡성을 관리한다.
         </p>
         <p>
-This specification strives to provide an architecture where application data
-remains in its native format and is not made opaque, while other cryptographic
-data, such as digital signatures, are kept in their opaque binary encoded form.
-Cryptographic suite implementers are urged to consider appropriate use of data
-opacity when designing their suites, and to weigh the design trade-offs when
-making application data opaque versus providing access to cryptographic data at
-the application layer.
+이 규격은 애플리케이션 데이터가 네이티브 형식으로 남아 불투명해지지 않으면서, 디지털 서명과
+같은 다른 암호 데이터는 그 불투명한 이진 인코딩 형태로 유지되는 아키텍처를 제공하려 노력한다.
+암호 스위트 구현자는 자신의 스위트를 설계할 때 데이터 불투명성의 적절한 사용을 고려하고,
+애플리케이션 데이터를 불투명하게 만드는 것과 애플리케이션 계층에서 암호 데이터에 대한 접근을
+제공하는 것 사이의 설계 절충을 저울질할 것을 강력히 권장받는다.
         </p>
       </section>
 
-      <section id="verification-method-binding"><div class="header-wrapper"><h3 id="x5-9-verification-method-binding"><bdi class="secno">5.9 </bdi>Verification Method Binding</h3><a class="self-link" href="#verification-method-binding" aria-label="Permalink for Section 5.9"></a></div>
+      <section id="verification-method-binding"><div class="header-wrapper"><h3 id="x5-9-verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</h3><a class="self-link" href="#verification-method-binding" aria-label="Permalink for Section 5.9"></a></div>
         
 
         <p>
-Implementers ensure that a <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-8">verification method</a> is bound to a particular
-controller by going from the definition of the <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-9">verification method</a> to the
-<a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-2">controlled identifier document</a>, and then ensuring that the <a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-3">controlled identifier document</a> also
-contains a reference to the <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-10">verification method</a>. This process is described
-in the algorithm for
+구현자는 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-9">검증 방법</a>의 정의에서 <a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-2">제어 식별자 문서</a>로 이동한
+다음, 그 <a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-3">제어 식별자 문서</a>도 그 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-10">검증 방법</a>에 대한 참조를
+담고 있는지 확인함으로써, <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-8">검증 방법</a>이 특정 제어자에 결속되어 있음을
+보장한다. 이 과정은
 <a href="https://www.w3.org/TR/cid-1.0/#retrieve-verification-method">
-retrieving a verification method</a>.
+검증 방법 조회</a> 알고리즘에 기술되어 있다.
         </p>
       </section>
 
-      <section id="verification-relationship-validation"><div class="header-wrapper"><h3 id="x5-10-verification-relationship-validation"><bdi class="secno">5.10 </bdi>Verification Relationship Validation</h3><a class="self-link" href="#verification-relationship-validation" aria-label="Permalink for Section 5.10"></a></div>
+      <section id="verification-relationship-validation"><div class="header-wrapper"><h3 id="x5-10-verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</h3><a class="self-link" href="#verification-relationship-validation" aria-label="Permalink for Section 5.10"></a></div>
         
 
         <p>
-When an implementation is <a href="#verify-proof">verifying a proof</a>, it is
-imperative that it verify not only that the <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-11">verification method</a> used to
-generate the proof is listed in the <a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-4">controlled identifier document</a>, but also that it
-was intended to be used to generate the proof that is being verified. This process
-is known as "verification relationship validation".
+구현체가 <a href="#verify-proof">증명을 검증</a>할 때는, 증명을 생성하는 데 사용된
+<a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-11">검증 방법</a>이 <a data-link-type="dfn|abstract-op" href="#dfn-controlled-identifier-document" class="internalDFN" id="ref-for-dfn-controlled-identifier-document-4">제어 식별자 문서</a>에 나열되어 있는지뿐
+아니라, 검증되고 있는 증명을 생성하는 데 사용되도록 의도되었는지도 검증하는 것이 필수적이다.
+이 과정을 "검증 관계 유효성 검사"라고 한다.
         </p>
         <p>
-The process of validating a verification relationship is outlined in
-Section
+검증 관계를 유효성 검사하는 과정은 <cite><a data-matched-text="[[[CID]]]" href="https://www.w3.org/TR/cid-1.0/">Controlled Identifiers v1.0</a></cite> 규격의
 <a href="https://www.w3.org/TR/cid-1.0/#retrieve-verification-method">
-3.3 Retrieve Verification Method</a> of the <cite><a data-matched-text="[[[CID]]]" href="https://www.w3.org/TR/cid-1.0/">Controlled Identifiers v1.0</a></cite>
-specification.
+3.3 검증 방법 조회</a> 절에 개괄되어 있다.
         </p>
         <p>
-This process is used to ensure that cryptographic material, such as a private
-cryptographic key, is not misused by application to an unintended purpose. An
-example of cryptographic material misuse would be if a private cryptographic
-key meant to be used to issue a <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credential</a> was instead used to
-log into a website (that is, for authentication). Not checking a verification relationship
-is dangerous because the restriction and protection profile for some
-cryptographic material could be determined by its intended use. For example,
-some applications could be trusted to use cryptographic material for only
-one purpose, or some cryptographic material could be more protected,
-such as through storage in a hardware security module in a data center
-versus as an unencrypted file on a laptop.
+이 과정은 개인 암호 키와 같은 암호학적 자료가 애플리케이션에 의해 의도되지 않은 목적으로
+오용되지 않도록 보장하는 데 사용된다. 암호학적 자료 오용의 한 예는 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한 크리덴셜</a>을
+발급하는 데 사용되도록 의도된 개인 암호 키가 대신 웹사이트에 로그인하는 데(즉, 인증을 위해)
+사용되는 경우다. 검증 관계를 확인하지 않는 것은 위험한데, 어떤 암호학적 자료의 제한 및 보호
+프로파일이 그 의도된 용도에 의해 결정될 수 있기 때문이다. 예를 들어 일부 애플리케이션은
+암호학적 자료를 오직 한 가지 목적으로만 사용하도록 신뢰될 수 있고, 또는 일부 암호학적
+자료는 노트북의 암호화되지 않은 파일로 있는 것에 비해 데이터센터의 하드웨어 보안 모듈에
+저장되는 것과 같이 더 보호될 수 있다.
         </p>
       </section>
 
-      <section id="proof-purpose-validation"><div class="header-wrapper"><h3 id="x5-11-proof-purpose-validation"><bdi class="secno">5.11 </bdi>Proof Purpose Validation</h3><a class="self-link" href="#proof-purpose-validation" aria-label="Permalink for Section 5.11"></a></div>
+      <section id="proof-purpose-validation"><div class="header-wrapper"><h3 id="x5-11-proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</h3><a class="self-link" href="#proof-purpose-validation" aria-label="Permalink for Section 5.11"></a></div>
         
 
         <p>
-When an implementation is <a href="#verify-proof">verifying a proof</a>, it is
-imperative that it verify that the <a data-link-type="dfn|abstract-op" href="#dfn-proof-purpose" class="internalDFN" id="ref-for-dfn-proof-purpose-6">proof purpose</a> match the intended use.
+구현체가 <a href="#verify-proof">증명을 검증</a>할 때는, <a data-link-type="dfn|abstract-op" href="#dfn-proof-purpose" class="internalDFN" id="ref-for-dfn-proof-purpose-6">증명 목적</a>이
+의도된 용도와 일치하는지 검증하는 것이 필수적이다.
         </p>
 
         <p>
-This process is used to ensure that proofs are not misused by an application for
-an unintended purpose, as this is dangerous for the proof creator. An example of
-misuse would be if a proof that stated its purpose was for securing assertions
-in <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a> was instead used for <a data-link-type="dfn|abstract-op" href="#dfn-authentication" class="internalDFN" id="ref-for-dfn-authentication-1">authentication</a> to
-log into a website. In this case, the proof creator attached proofs to any
-number of <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a> that they expected to be distributed to
-an unbounded number of other parties. Any one of these parties could log into a
-website as the proof creator if the website erroneously accepted such a proof as
-<a data-link-type="dfn|abstract-op" href="#dfn-authentication" class="internalDFN" id="ref-for-dfn-authentication-2">authentication</a> instead of its intended purpose.
+이 과정은 증명이 애플리케이션에 의해 의도되지 않은 목적으로 오용되지 않도록 보장하는 데
+사용되는데, 이는 증명 생성자에게 위험하기 때문이다. 오용의 한 예는 목적이 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한
+크리덴셜</a>의 어써션을 보안하는 것이라고 밝힌 증명이 대신 웹사이트에 로그인하기 위한
+<a data-link-type="dfn|abstract-op" href="#dfn-authentication" class="internalDFN" id="ref-for-dfn-authentication-1">인증</a>에 사용되는 경우다. 이 경우 증명 생성자는 무한한 수의 다른 당사자에게
+배포될 것으로 기대한 임의의 수의 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한 크리덴셜</a>에 증명을 첨부했다. 웹사이트가
+그러한 증명을 그 의도된 목적 대신 <a data-link-type="dfn|abstract-op" href="#dfn-authentication" class="internalDFN" id="ref-for-dfn-authentication-2">인증</a>으로 잘못 받아들이면, 이 당사자들 중
+누구든 증명 생성자로서 웹사이트에 로그인할 수 있다.
         </p>
 
       </section>
 
-      <section id="canonicalization-method-security"><div class="header-wrapper"><h3 id="x5-12-canonicalization-method-security"><bdi class="secno">5.12 </bdi>Canonicalization Method Security</h3><a class="self-link" href="#canonicalization-method-security" aria-label="Permalink for Section 5.12"></a></div>
+      <section id="canonicalization-method-security"><div class="header-wrapper"><h3 id="x5-12-canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</h3><a class="self-link" href="#canonicalization-method-security" aria-label="Permalink for Section 5.12"></a></div>
         
 
         <p>
-The way in which a transformation, such as canonicalization, is performed can
-affect the security characteristics of a system. Selecting the best
-canonicalization mechanisms depends on the use case. Often,
-the simplest mechanism that satisfies the desired security requirements
-is the best choice. This section attempts to provide simple guidance to help
-implementers choose between the two main canonicalization mechanisms referred to
-in this specification, namely JSON Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>] and
-RDF Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>].
+정규화와 같은 변환이 수행되는 방식은 시스템의 보안 특성에 영향을 줄 수 있다. 최선의 정규화
+메커니즘을 선택하는 것은 사용 사례에 달려 있다. 흔히 원하는 보안 요구사항을 충족하는 가장
+단순한 메커니즘이 최선의 선택이다. 이 절은 구현자가 이 규격에서 언급하는 두 주요 정규화
+메커니즘, 즉 JSON Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>]과 RDF 데이터셋 정규화
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>] 사이에서 선택하는 것을 돕기 위해 간단한 지침을 제공하려 시도한다.
         </p>
         <p>
-If an application only uses JSON and does not depend on any form of RDF
-semantics, then using a cryptography suite that uses JSON
-Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>] is an attractive approach.
+애플리케이션이 JSON만 사용하고 어떤 형태의 RDF 의미론에도 의존하지 않는다면, JSON
+Canonicalization Scheme [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8785" title="JSON Canonicalization Scheme (JCS)">RFC8785</a></cite>]을 사용하는 암호 스위트를 사용하는 것이 매력적인
+접근법이다.
         </p>
         <p>
-If an application uses JSON-LD and needs to secure the semantics of
-the document, then using a cryptography suite that
-uses RDF Dataset Canonicalization [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>] is an attractive
-approach.
+애플리케이션이 JSON-LD를 사용하고 문서의 의미론을 보안해야 한다면, RDF 데이터셋 정규화
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-canon" title="RDF Dataset Canonicalization">RDF-CANON</a></cite>]를 사용하는 암호 스위트를 사용하는 것이 매력적인 접근법이다.
         </p>
         <p>
-Implementers are also advised that other mechanisms that perform no
-transformations are available, that secure the data by wrapping it in a
-cryptographic envelope instead of embedding the proof in the data, such as
-JWTs [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>] and CWTs [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8392" title="CBOR Web Token (CWT)">RFC8392</a></cite>]. These approaches have simplicity
-advantages in some use cases, at the expense of some of the benefits provided
-by the approach detailed in this specification.
+구현자는 또한 JWT [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7519" title="JSON Web Token (JWT)">RFC7519</a></cite>]와 CWT [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8392" title="CBOR Web Token (CWT)">RFC8392</a></cite>]처럼, 증명을 데이터에
+내장하는 대신 데이터를 암호학적 봉투로 감싸서 보안하며 변환을 수행하지 않는 다른 메커니즘도
+이용 가능함을 안내받는다. 이러한 접근법은 이 규격에 상세히 설명된 접근법이 제공하는 이점
+일부를 희생하는 대신, 일부 사용 사례에서 단순성 이점을 갖는다.
         </p>
       </section>
 
-      <section id="canonicalization-method-correctness"><div class="header-wrapper"><h3 id="x5-13-canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>Canonicalization Method Correctness</h3><a class="self-link" href="#canonicalization-method-correctness" aria-label="Permalink for Section 5.13"></a></div>
+      <section id="canonicalization-method-correctness"><div class="header-wrapper"><h3 id="x5-13-canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</h3><a class="self-link" href="#canonicalization-method-correctness" aria-label="Permalink for Section 5.13"></a></div>
         
 
         <p>
-One of the algorithmic processes used by this specification is canonicalization,
-which is a type of <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-8">transformation</a>. Canonicalization is the process of
-taking information that might be expressed in a variety of semantically
-equivalent ways as input, and expressing all output in a single way, called a
-"canonical form".
+이 규격이 사용하는 알고리즘 과정 중 하나는 정규화로, 이는 <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-8">변환</a>의 한 유형이다.
+정규화는 의미론적으로 동등한 다양한 방식으로 표현될 수 있는 정보를 입력으로 받아, 모든
+출력을 "정규 형식"이라 불리는 단일 방식으로 표현하는 과정이다.
         </p>
         <p>
-The security of a resulting <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-16">data integrity proof</a> that utilizes
-canonicalization is highly dependent on the correctness of the algorithm. For
-example, if a canonicalization algorithm converts two inputs that have different
-meanings into the same output, then the author's intentions can be
-misrepresented to a <a data-link-type="dfn|abstract-op" href="#dfn-verifier" class="internalDFN" id="ref-for-dfn-verifier-3">verifier</a>. This can be used as an attack vector by
-adversaries.
+정규화를 활용하는 결과 <a data-link-type="dfn|abstract-op" href="#dfn-data-integrity-proof" class="internalDFN" id="ref-for-dfn-data-integrity-proof-16">데이터 무결성 증명</a>의 보안은 그 알고리즘의 정확성에
+크게 의존한다. 예를 들어 정규화 알고리즘이 서로 다른 의미를 가진 두 입력을 동일한 출력으로
+변환하면, 저작자의 의도가 <a data-link-type="dfn|abstract-op" href="#dfn-verifier" class="internalDFN" id="ref-for-dfn-verifier-3">검증자</a>에게 잘못 전달될 수 있다. 이는 적대자에
+의해 공격 벡터로 사용될 수 있다.
         </p>
         <p>
-Additionally, if semantically relevant information in an input is not present in
-the output, then an attacker could insert such information into a message
-without causing proof verification to fail. This is similar to another
-transformation that is commonly used when cryptographically signing messages:
-cryptographic hashing. If an attacker is able to produce the same cryptographic
-hash from a different input, then the cryptographic hash algorithm is not
-considered secure.
+게다가 입력에서 의미론적으로 관련된 정보가 출력에 존재하지 않으면, 공격자는 증명 검증이
+실패하게 하지 않고도 그러한 정보를 메시지에 삽입할 수 있다. 이는 메시지를 암호학적으로 서명할
+때 흔히 사용되는 또 다른 변환인 암호 해싱과 유사하다. 공격자가 서로 다른 입력에서 동일한
+암호 해시를 만들어낼 수 있으면, 그 암호 해시 알고리즘은 안전하다고 간주되지 않는다.
         </p>
         <p>
-Implementers are strongly urged to ensure proper vetting of any canonicalization
-algorithms to be used for <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-9">transformation</a> of input to a <a data-link-type="dfn|abstract-op" href="#dfn-hashing" class="internalDFN" id="ref-for-dfn-hashing-2">hashing</a>
-process. Proper vetting includes, at a minimum, association with a peer reviewed
-mathematical proof of algorithm correctness; multiple implementations and vetting
-by experts in a standards setting organization is preferred. Implementers are
-strongly urged not to invent or use new mechanisms unless they have formal
-training in information canonicalization and/or access to experts in the field
-who are capable of producing a peer reviewed mathematical proof of algorithm
-correctness.
+구현자는 입력을 <a data-link-type="dfn|abstract-op" href="#dfn-hashing" class="internalDFN" id="ref-for-dfn-hashing-2">해싱</a> 과정으로 <a data-link-type="dfn|abstract-op" href="#dfn-transformation" class="internalDFN" id="ref-for-dfn-transformation-9">변환</a>하는 데 사용될 모든
+정규화 알고리즘이 제대로 검증되도록 보장할 것을 강력히 권장받는다. 제대로 된 검증은 최소한
+알고리즘 정확성에 대한 동료 심사를 거친 수학적 증명과의 연관을 포함하며, 여러 구현체와 표준
+제정 기관 전문가의 검증이 선호된다. 구현자는 정보 정규화에 대한 정식 교육을 받았거나 알고리즘
+정확성에 대한 동료 심사를 거친 수학적 증명을 만들어낼 수 있는 해당 분야 전문가에 대한 접근이
+있지 않은 한, 새로운 메커니즘을 발명하거나 사용하지 않을 것을 강력히 권장받는다.
         </p>
       </section>
 
-      <section id="network-requests"><div class="header-wrapper"><h3 id="x5-14-network-requests"><bdi class="secno">5.14 </bdi>Network Requests</h3><a class="self-link" href="#network-requests" aria-label="Permalink for Section 5.14"></a></div>
+      <section id="network-requests"><div class="header-wrapper"><h3 id="x5-14-network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</h3><a class="self-link" href="#network-requests" aria-label="Permalink for Section 5.14"></a></div>
         
 
         <p>
-This specification is designed in such a way that no network requests are
-required when verifying a proof on a <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-8">conforming secured document</a>.
-Readers might note, however, that <a href="#data-model">JSON-LD contexts</a>
-and <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-12">verification methods</a> can contain URLs that might be retrieved
-over a network connection. This concern exists for any URL that might be
-loaded from the network during or after verification.
+이 규격은 <a data-link-type="dfn|abstract-op" href="#dfn-conforming-secured-document" class="internalDFN" id="ref-for-dfn-conforming-secured-document-8">적합 보안 문서</a>의 증명을 검증할 때 네트워크 요청이 필요하지 않도록
+설계되었다. 그러나 독자는 <a href="#data-model">JSON-LD 컨텍스트</a>와
+<a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-12">검증 방법</a>이 네트워크 연결을 통해 검색될 수 있는 URL을 담을 수 있음에 유의할
+수 있다. 이 우려는 검증 중이나 후에 네트워크에서 로드될 수 있는 모든 URL에 존재한다.
         </p>
         <p>
-To the extent possible, implementers are urged to permanently or aggressively
-cache such information to reduce the attack surface on an implementation that
-might need to fetch such URLs over the network. For example, caching techniques
-for <a href="#data-model">JSON-LD contexts</a> are described in Section
-<a href="#contexts-and-vocabularies" data-matched-text="[[[#contexts-and-vocabularies]]]" class="sec-ref"><bdi class="secno">2.4 </bdi>Contexts and Vocabularies</a>, and some <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-13">verification methods</a>, such as
-<code>did:key</code> [<cite><a class="bibref" data-link-type="biblio" href="#bib-did-key" title="The did:key Method">DID-KEY</a></cite>], do not need to be fetched from the network at all.
+가능한 한, 구현자는 그러한 URL을 네트워크를 통해 가져와야 할 수 있는 구현체에 대한 공격
+표면을 줄이기 위해 그러한 정보를 영구적으로 또는 적극적으로 캐시할 것을 강력히 권장받는다.
+예를 들어 <a href="#data-model">JSON-LD 컨텍스트</a>에 대한 캐싱 기법은
+<a href="#contexts-and-vocabularies" data-matched-text="[[[#contexts-and-vocabularies]]]" class="sec-ref"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a> 절에 기술되어 있고, <code>did:key</code>
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-did-key" title="The did:key Method">DID-KEY</a></cite>]와 같은 일부 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-13">검증 방법</a>은 네트워크에서 전혀 가져올 필요가 없다.
         </p>
         <p>
-When it is not possible to use cached information, such as when a specific HTTP
-URL-based instance of a <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-14">verification method</a> is encountered for the first
-time, implementers are cautioned to use defensive measures to mitigate <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">
-denial-of-service attacks</a> during any process that might fetch a resource
-from the network.
+특정 HTTP URL 기반 <a data-link-type="dfn|abstract-op" href="#dfn-verification-method" class="internalDFN" id="ref-for-dfn-verification-method-14">검증 방법</a> 인스턴스를 처음 만났을 때처럼 캐시된 정보를
+사용할 수 없을 때, 구현자는 네트워크에서 자원을 가져올 수 있는 모든 과정 중에 <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">
+서비스 거부 공격</a>을 완화하기 위해 방어적 조치를 사용하도록 주의받는다.
         </p>
       </section>
 
-      <section id="other-security-considerations"><div class="header-wrapper"><h3 id="x5-15-other-security-considerations"><bdi class="secno">5.15 </bdi>Other Security Considerations</h3><a class="self-link" href="#other-security-considerations" aria-label="Permalink for Section 5.15"></a></div>
+      <section id="other-security-considerations"><div class="header-wrapper"><h3 id="x5-15-other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</h3><a class="self-link" href="#other-security-considerations" aria-label="Permalink for Section 5.15"></a></div>
         
 
         <p>
-Since the technology to secure documents described by this specification is
-generalized in nature, the security implications of its use might not be
-immediately apparent to readers. To understand the sort of security
-concerns one might need to consider in a complete software system, implementers
-are urged to read about how this technology is used in the
-<a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">verifiable credentials</a> ecosystem [<cite><a class="bibref" data-link-type="biblio" href="#bib-vc-data-model-2.0" title="Verifiable Credentials Data Model v2.0">VC-DATA-MODEL-2.0</a></cite>]; see the section
-on <a href="https://www.w3.org/TR/vc-data-model-2.0/#security-considerations">
-Verifiable Credential Security Considerations</a> for more information.
+이 규격에 기술된 문서 보안 기술은 본질적으로 일반화되어 있으므로, 그 사용의 보안적 함의가
+독자에게 즉시 분명하지 않을 수 있다. 완전한 소프트웨어 시스템에서 고려해야 할 수 있는 보안
+우려의 종류를 이해하기 위해, 구현자는 이 기술이 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential">검증가능한 크리덴셜</a> 생태계
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-vc-data-model-2.0" title="Verifiable Credentials Data Model v2.0">VC-DATA-MODEL-2.0</a></cite>]에서 어떻게 사용되는지 읽어볼 것을 강력히 권장받는다. 더 자세한 정보는
+<a href="https://www.w3.org/TR/vc-data-model-2.0/#security-considerations">
+Verifiable Credential Security Considerations</a> 절을 참고하라.
         </p>
       </section>
 
