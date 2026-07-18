@@ -845,7 +845,7 @@ li.sd-jwt-tab {
                       이 문서는
                       <a id="w3c_process_revision" href="https://www.w3.org/policies/process/20231103/">2023년 11월 3일자 <abbr title="World Wide Web Consortium">W3C</abbr> 프로세스 문서(Process Document)</a>의
                       적용을 받는다.
-                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>변환</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>프라이버시 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>연결 불가능성</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>선택적 공개</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>이전 증명</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>네트워크 요청 핑거프린팅</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>정규화 방법 프라이버시</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>기타 프라이버시 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>접근성 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>시간 값 표현하기</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">요약</a></li><li class="tocline"><a class="tocxref" href="#sotd">현재 문서의 상태</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>소개</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#how-it-works"><bdi class="secno">1.1 </bdi>작동 방식</a></li><li class="tocline"><a class="tocxref" href="#design-goals-and-rationale"><bdi class="secno">1.2 </bdi>설계 목표와 근거</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.3 </bdi>적합성</a></li><li class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>용어</a></li></ol></li><li class="tocline"><a class="tocxref" href="#data-model"><bdi class="secno">2. </bdi>데이터 모델</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proofs"><bdi class="secno">2.1 </bdi>증명</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#proof-sets"><bdi class="secno">2.1.1 </bdi>증명 집합</a></li><li class="tocline"><a class="tocxref" href="#proof-chains"><bdi class="secno">2.1.2 </bdi>증명 체인</a></li><li class="tocline"><a class="tocxref" href="#proof-graphs"><bdi class="secno">2.1.3 </bdi>증명 그래프</a></li></ol></li><li class="tocline"><a class="tocxref" href="#proof-purposes"><bdi class="secno">2.2 </bdi>증명 목적</a></li><li class="tocline"><a class="tocxref" href="#resource-integrity"><bdi class="secno">2.3 </bdi>자원 무결성</a></li><li class="tocline"><a class="tocxref" href="#contexts-and-vocabularies"><bdi class="secno">2.4 </bdi>컨텍스트와 어휘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#validating-contexts"><bdi class="secno">2.4.1 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#context-injection"><bdi class="secno">2.4.2 </bdi>컨텍스트 주입</a></li><li class="tocline"><a class="tocxref" href="#securing-data-losslessly"><bdi class="secno">2.4.3 </bdi>데이터를 무손실로 보안하기</a></li><li class="tocline"><a class="tocxref" href="#datatypes"><bdi class="secno">2.4.4 </bdi>데이터 타입</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#relationship-to-linked-data"><bdi class="secno">2.5 </bdi>연결 데이터와의 관계</a></li><li class="tocline"><a class="tocxref" href="#relationship-to-verifiable-credentials"><bdi class="secno">2.6 </bdi>검증가능한 크리덴셜과의 관계</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-suites"><bdi class="secno">3. </bdi>암호 스위트</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dataintegrityproof"><bdi class="secno">3.1 </bdi>DataIntegrityProof</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algorithms"><bdi class="secno">4. </bdi>알고리즘</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#processing-model"><bdi class="secno">4.1 </bdi>처리 모델</a></li><li class="tocline"><a class="tocxref" href="#add-proof"><bdi class="secno">4.2 </bdi>증명 추가</a></li><li class="tocline"><a class="tocxref" href="#add-proof-set-chain"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a></li><li class="tocline"><a class="tocxref" href="#verify-proof"><bdi class="secno">4.4 </bdi>증명 검증</a></li><li class="tocline"><a class="tocxref" href="#verify-proof-sets-and-chains"><bdi class="secno">4.5 </bdi>증명 집합과 체인 검증</a></li><li class="tocline"><a class="tocxref" href="#context-validation"><bdi class="secno">4.6 </bdi>컨텍스트 검증</a></li><li class="tocline"><a class="tocxref" href="#processing-errors"><bdi class="secno">4.7 </bdi>처리 오류</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">5. </bdi>보안 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versioning-cryptography-suites"><bdi class="secno">5.1 </bdi>암호 스위트 버전 관리</a></li><li class="tocline"><a class="tocxref" href="#protecting-application-developers"><bdi class="secno">5.2 </bdi>애플리케이션 개발자 보호</a></li><li class="tocline"><a class="tocxref" href="#conventions-for-naming-cryptography-suites"><bdi class="secno">5.3 </bdi>암호 스위트 명명 규칙</a></li><li class="tocline"><a class="tocxref" href="#agility-and-layering"><bdi class="secno">5.4 </bdi>민첩성과 계층화</a></li><li class="tocline"><a class="tocxref" href="#safer-abstractions"><bdi class="secno">5.5 </bdi>더 안전한 추상화</a></li><li class="tocline"><a class="tocxref" href="#transformations"><bdi class="secno">5.6 </bdi>변환</a></li><li class="tocline"><a class="tocxref" href="#protected-information"><bdi class="secno">5.7 </bdi>보호되는 정보</a></li><li class="tocline"><a class="tocxref" href="#data-opacity"><bdi class="secno">5.8 </bdi>데이터 불투명성</a></li><li class="tocline"><a class="tocxref" href="#verification-method-binding"><bdi class="secno">5.9 </bdi>검증 방법 결속</a></li><li class="tocline"><a class="tocxref" href="#verification-relationship-validation"><bdi class="secno">5.10 </bdi>검증 관계 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#proof-purpose-validation"><bdi class="secno">5.11 </bdi>증명 목적 유효성 검사</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-security"><bdi class="secno">5.12 </bdi>정규화 방법 보안</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-correctness"><bdi class="secno">5.13 </bdi>정규화 방법 정확성</a></li><li class="tocline"><a class="tocxref" href="#network-requests"><bdi class="secno">5.14 </bdi>네트워크 요청</a></li><li class="tocline"><a class="tocxref" href="#other-security-considerations"><bdi class="secno">5.15 </bdi>기타 보안 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">6. </bdi>프라이버시 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#unlinkability"><bdi class="secno">6.1 </bdi>연결 불가능성</a></li><li class="tocline"><a class="tocxref" href="#selective-disclosure"><bdi class="secno">6.2 </bdi>선택적 공개</a></li><li class="tocline"><a class="tocxref" href="#previous-proofs"><bdi class="secno">6.3 </bdi>이전 증명</a></li><li class="tocline"><a class="tocxref" href="#fingerprinting-network-requests"><bdi class="secno">6.4 </bdi>네트워크 요청 핑거프린팅</a></li><li class="tocline"><a class="tocxref" href="#canonicalization-method-privacy"><bdi class="secno">6.5 </bdi>정규화 방법 프라이버시</a></li><li class="tocline"><a class="tocxref" href="#other-privacy-considerations"><bdi class="secno">6.6 </bdi>기타 프라이버시 고려사항</a></li></ol></li><li class="tocline"><a class="tocxref" href="#accessibility-considerations"><bdi class="secno">7. </bdi>접근성 고려사항</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#presenting-time-values"><bdi class="secno">7.1 </bdi>시간 값 표현하기</a></li></ol></li><li class="tocline"><a class="tocxref" href="#understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>증명 집합과 증명 체인 이해하기</a></li><li class="tocline"><a class="tocxref" href="#revision-history"><bdi class="secno">B. </bdi>Revision History</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">C. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
     <section class="informative" id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>소개</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
@@ -3486,39 +3486,35 @@ Verifiable Credential Privacy Considerations</a> 절을 참고하라.
 
     </section>
 
-    <section class="appendix informative" id="understanding-proof-sets-and-proof-chains"><div class="header-wrapper"><h2 id="a-understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>Understanding Proof Sets and Proof Chains</h2><a class="self-link" href="#understanding-proof-sets-and-proof-chains" aria-label="Permalink for Appendix A."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
+    <section class="appendix informative" id="understanding-proof-sets-and-proof-chains"><div class="header-wrapper"><h2 id="a-understanding-proof-sets-and-proof-chains"><bdi class="secno">A. </bdi>증명 집합과 증명 체인 이해하기</h2><a class="self-link" href="#understanding-proof-sets-and-proof-chains" aria-label="Permalink for Appendix A."></a></div><p><em>이 부분은 비규범적입니다.</em></p>
       
       <p>
-Sections <a href="#proof-sets" data-matched-text="[[[#proof-sets]]]" class="sec-ref"><bdi class="secno">2.1.1 </bdi>Proof Sets</a> and <a href="#proof-chains" data-matched-text="[[[#proof-chains]]]" class="sec-ref"><bdi class="secno">2.1.2 </bdi>Proof Chains</a> describe how multiple proofs
-can be expressed in a <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-12">secured data document</a>; that is, instead of a single
-<a data-link-type="dfn|abstract-op" href="#dfn-proof" class="internalDFN" id="ref-for-dfn-proof-5">proof</a> included in the <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-13">secured data document</a>, one can express multiple
-proofs in an <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> as shown in <a href="#example-a-proof-set-in-a-data-document" data-matched-text="[[[#example-a-proof-set-in-a-data-document]]]" class="box-ref">예시<bdi> 6</bdi></a> and
-<a href="#example-a-proof-chain-in-a-data-document" data-matched-text="[[[#example-a-proof-chain-in-a-data-document]]]" class="box-ref">예시<bdi> 7</bdi></a>. The elements of this <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> are
-members of a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-2">proof set</a> and, optionally, a <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-2">proof chain</a>. The purpose of
-this section is to explain the intended use of each of these features and, in
-particular, their differing security properties. These differing security
-properties lead to differences in the processing in section
-<a href="#add-proof-set-chain" data-matched-text="[[[#add-proof-set-chain]]]" class="sec-ref"><bdi class="secno">4.3 </bdi>Add Proof Set/Chain</a>.
+<a href="#proof-sets" data-matched-text="[[[#proof-sets]]]" class="sec-ref"><bdi class="secno">2.1.1 </bdi>증명 집합</a>과 <a href="#proof-chains" data-matched-text="[[[#proof-chains]]]" class="sec-ref"><bdi class="secno">2.1.2 </bdi>증명 체인</a> 절은 여러 증명이
+<a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-12">보안 데이터 문서</a>에 어떻게 표현될 수 있는지 기술한다. 즉, <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-13">보안 데이터 문서</a>에
+포함된 단일 <a data-link-type="dfn|abstract-op" href="#dfn-proof" class="internalDFN" id="ref-for-dfn-proof-5">증명</a> 대신, <a href="#example-a-proof-set-in-a-data-document" data-matched-text="[[[#example-a-proof-set-in-a-data-document]]]" class="box-ref">예시<bdi> 6</bdi></a>과
+<a href="#example-a-proof-chain-in-a-data-document" data-matched-text="[[[#example-a-proof-chain-in-a-data-document]]]" class="box-ref">예시<bdi> 7</bdi></a>에 나온 것처럼 여러 증명을 <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">리스트</a>로 표현할 수 있다. 이 <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list">리스트</a>의 원소는
+<a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-2">증명 집합</a>의, 그리고 선택적으로 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-2">증명 체인</a>의 구성원이다. 이 절의 목적은
+이러한 각 기능의 의도된 용도와, 특히 그것들의 서로 다른 보안 속성을 설명하는 것이다. 이
+서로 다른 보안 속성은 <a href="#add-proof-set-chain" data-matched-text="[[[#add-proof-set-chain]]]" class="sec-ref"><bdi class="secno">4.3 </bdi>증명 집합/체인 추가</a> 절의 처리에서의 차이로
+이어진다.
       </p>
       <p>
-This section represents <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-14">secured data documents</a>, including their proofs, in
-an abbreviated manner so that the important security properties can be
-observed.
+이 절은 중요한 보안 속성을 관찰할 수 있도록, <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-14">보안 데이터 문서</a>를 그 증명을 포함하여
+축약된 방식으로 나타낸다.
       </p>
       <p>
-Consider a scenario with three signatories: a CEO, a CFO, and a VP of
-Engineering. Each will need to have a public key and secret key pair for signing
-a document. We denote the secret/public keys of each of these signatories by
-<em>secretCEO/publicCEO</em>, <em>secretCFO/publicCFO</em>, and
-<em>secretVPE/publicVPE</em>, respectively.
+세 명의 서명자, 즉 CEO, CFO, 엔지니어링 부사장(VP)이 있는 시나리오를 생각해 보자. 각자
+문서에 서명하기 위한 공개키·비밀키 쌍을 가져야 한다. 이 서명자 각각의 비밀키/공개키를 각각
+<em>secretCEO/publicCEO</em>, <em>secretCFO/publicCFO</em>,
+<em>secretVPE/publicVPE</em>로 표기한다.
       </p>
       <p>
-When constructing a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-3">proof set</a> where each of the signatories signs an
-<var>inputDocument</var> without concern, we construct a proof symbolically as:
+각 서명자가 우려 없이 <var>inputDocument</var>에 서명하는 <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-3">증명 집합</a>을 구성할
+때, 증명을 상징적으로 다음과 같이 구성한다:
       </p>
       <div class="example" id="example-symbolic-expression-of-how-a-proof-is-created">
         <div class="marker">
-    <a class="self-link" href="#example-symbolic-expression-of-how-a-proof-is-created">예시<bdi> 9</bdi></a><span class="example-title">: Symbolic expression of how a proof is created</span>
+    <a class="self-link" href="#example-symbolic-expression-of-how-a-proof-is-created">예시<bdi> 9</bdi></a><span class="example-title">: 증명이 생성되는 방식의 상징적 표현</span>
   </div> <pre class="nohighlight">{
   "type": "DataIntegrityProof",
   "cryptosuite": "eddsa-jcs-2022",
@@ -3529,18 +3525,17 @@ When constructing a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" cl
 }</pre>
       </div>
       <p>
-Where <em>publicCEO</em> is used as a placeholder for a reference that resolves
-to the CEO's public key and <strong>signature(<code>secretKey</code>,
-<code>inputDocument</code>)</strong> denotes the computation of a digital signature
-by a particular data integrity cryptosuite using a particular secret key over a
-particular document. The <code>type</code>, <code>cryptosuite</code>, <code>created</code>, and <code>proofPurpose</code>
-attributes do not factor into our discussion so we will omit them. In
-particular, below we show all the proofs in a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-4">proof set</a> on a document that
-has been signed by the VP of Engineering, the CFO, and the CEO:
+여기서 <em>publicCEO</em>는 CEO의 공개키로 해석되는 참조의 자리표시자로 사용되고,
+<strong>signature(<code>secretKey</code>,
+<code>inputDocument</code>)</strong>는 특정 비밀키를 사용하여 특정 문서에 대해 특정 데이터
+무결성 암호 스위트가 디지털 서명을 계산하는 것을 나타낸다. <code>type</code>, <code>cryptosuite</code>,
+<code>created</code>, <code>proofPurpose</code> 속성은 우리 논의에 영향을 주지 않으므로 생략한다. 특히
+아래에서는 엔지니어링 부사장, CFO, CEO가 서명한 문서에 대한 <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-4">증명 집합</a>의
+모든 증명을 보여준다:
       </p>
       <div class="example" id="example-symbolic-expression-of-a-proof-set">
         <div class="marker">
-    <a class="self-link" href="#example-symbolic-expression-of-a-proof-set">예시<bdi> 10</bdi></a><span class="example-title">: Symbolic expression of a proof set</span>
+    <a class="self-link" href="#example-symbolic-expression-of-a-proof-set">예시<bdi> 10</bdi></a><span class="example-title">: 증명 집합의 상징적 표현</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3556,18 +3551,18 @@ has been signed by the VP of Engineering, the CFO, and the CEO:
 }</pre>
       </div>
       <p>
-A <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders">holder</a> or any other intermediary receiving a <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-15">secured data document</a>
-containing a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-5">proof set</a> is able to remove any of the <code>proof</code> values within
-the set prior to passing it on to another entity and the <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-16">secured data document</a> will still verify. This might or might not have been the intent. For
-the signatories sending a birthday card to a valued employee, using a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-6">proof set</a> is probably fine. If we are trying to model a business process where
-approvals ascend the company hierarchy, this would not be ideal, since any
-intermediary could remove signatures from the <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-7">proof set</a> and still have it
-verify; for instance, in the example below, it looks like the CFO and CEO
-approved something without the VP of Engineering's concurrence.
+<a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-5">증명 집합</a>을 담은 <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-15">보안 데이터 문서</a>를 받은 <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders">보유자</a>나 다른
+어떤 중개자든 그것을 다른 엔티티에게 넘기기 전에 그 집합 안의 <code>proof</code> 값 중 어느 것이든
+제거할 수 있으며, 그래도 <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-16">보안 데이터 문서</a>는 여전히 검증된다. 이것이 의도였을 수도
+아닐 수도 있다. 소중한 직원에게 생일 카드를 보내는 서명자들에게는 <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-6">증명 집합</a>을
+사용하는 것이 아마 괜찮을 것이다. 승인이 회사 위계를 따라 올라가는 업무 프로세스를
+모델링하려 한다면, 어떤 중개자든 <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-7">증명 집합</a>에서 서명을 제거해도 여전히 검증되므로
+이는 이상적이지 않을 것이다. 예를 들어 아래 예시에서는 CFO와 CEO가 엔지니어링 부사장의
+동의 없이 무언가를 승인한 것처럼 보인다.
       </p>
       <div class="example" id="example-removal-of-a-signature-in-a-proof-set">
         <div class="marker">
-    <a class="self-link" href="#example-removal-of-a-signature-in-a-proof-set">예시<bdi> 11</bdi></a><span class="example-title">: Removal of a signature in a proof set</span>
+    <a class="self-link" href="#example-removal-of-a-signature-in-a-proof-set">예시<bdi> 11</bdi></a><span class="example-title">: 증명 집합에서 서명의 제거</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3580,26 +3575,23 @@ approved something without the VP of Engineering's concurrence.
 }</pre>
       </div>
       <p>
-It is possible to introduce a dependency between <a data-link-type="dfn|abstract-op" href="#dfn-proof" class="internalDFN" id="ref-for-dfn-proof-6">proofs</a> in a <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-8">proof set</a>
-by setting the <code>id</code> property of each proof such that another proof can reference
-it. In other words, a <em>dependent proof</em> will be referenced by other
-<em>relying proofs</em> by using the <code>previousProof</code> property. Such
-<em>dependency chains</em> can have arbitrary depth. The <strong>intent</strong>
-of such a <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-3">proof chain</a> is to model an approval chain in a business process or
-a notary witnessing analog signatures.
+각 증명의 <code>id</code> 속성을 다른 증명이 그것을 참조할 수 있도록 설정함으로써 <a data-link-type="dfn|abstract-op" href="#dfn-proof-set" class="internalDFN" id="ref-for-dfn-proof-set-8">증명 집합</a>
+안의 <a data-link-type="dfn|abstract-op" href="#dfn-proof" class="internalDFN" id="ref-for-dfn-proof-6">증명</a> 사이에 의존성을 도입하는 것이 가능하다. 다시 말해, <em>의존 증명</em>은
+<code>previousProof</code> 속성을 사용하여 다른 <em>의존하는 증명</em>에 의해 참조된다. 그러한
+<em>의존 체인</em>은 임의의 깊이를 가질 수 있다. 그러한 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-3">증명 체인</a>의
+<strong>의도</strong>는 업무 프로세스의 승인 체인이나 아날로그 서명을 입회하는 공증인을
+모델링하는 것이다.
       </p>
       <p>
-The examples below demonstrate how a <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-4">proof chain</a> can be constructed when the
-VP of Engineering signs off on the document first; based on the VP of
-Engineering's signature and a review, the CFO then signs off on the document;
-and finally, based on both prior signatures and a review, the CEO signs off on
-the document. Since others will be referring to the VP of Engineering's
-signature, we need to add an <code>id</code> to the proof. First the VP of
-Engineering signs the <a data-link-type="dfn|abstract-op" href="#dfn-input-document" class="internalDFN" id="ref-for-dfn-input-document-6">input document</a>:
+아래 예시들은 엔지니어링 부사장이 먼저 문서를 승인하고, 엔지니어링 부사장의 서명과 검토에
+기반하여 CFO가 그다음 문서를 승인하고, 마지막으로 앞선 두 서명과 검토에 기반하여 CEO가
+문서를 승인할 때 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-4">증명 체인</a>이 어떻게 구성될 수 있는지를 보여준다. 다른 이들이
+엔지니어링 부사장의 서명을 참조할 것이므로, 그 증명에 <code>id</code>를 추가해야 한다. 먼저
+엔지니어링 부사장이 <a data-link-type="dfn|abstract-op" href="#dfn-input-document" class="internalDFN" id="ref-for-dfn-input-document-6">입력 문서</a>에 서명한다:
       </p>
       <div class="example" id="example-proof-chain-containing-first-proof-with-id-property-set">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-first-proof-with-id-property-set">예시<bdi> 12</bdi></a><span class="example-title">: Proof chain containing first proof with `id` property set</span>
+    <a class="self-link" href="#example-proof-chain-containing-first-proof-with-id-property-set">예시<bdi> 12</bdi></a><span class="example-title">: `id` 속성이 설정된 첫 증명을 담은 증명 체인</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": {
@@ -3610,18 +3602,16 @@ Engineering signs the <a data-link-type="dfn|abstract-op" href="#dfn-input-docum
 }</pre>
       </div>
       <p>
-Next, the CFO receives the document, verifies that the VP of Engineering signed
-it, and signs it based on a review and on the signature of the VP of
-Engineering. For this, we need to set up the <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-5">proof chain</a> by indicating a
-dependency on the proof in the document just received. We do this by
-setting the <code>previousProof</code> property of the second proof to the value
-<code>urn:proof-1</code>, which "binds" the second proof to the first proof, which is
-then signed. The following example shows how the dependency on the first proof
-is created:
+다음으로 CFO가 문서를 받아 엔지니어링 부사장이 그것에 서명했는지 검증하고, 검토와 엔지니어링
+부사장의 서명에 기반하여 그것에 서명한다. 이를 위해 방금 받은 문서의 증명에 대한 의존성을
+나타냄으로써 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-5">증명 체인</a>을 설정해야 한다. 두 번째 증명의 <code>previousProof</code>
+속성을 값 <code>urn:proof-1</code>로 설정하여 이를 수행하는데, 이는 두 번째 증명을 첫 번째 증명에
+"결속"하고, 그런 다음 서명된다. 다음 예시는 첫 번째 증명에 대한 의존성이 어떻게 생성되는지를
+보여준다:
       </p>
       <div class="example" id="example-proof-chain-containing-two-proofs">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-two-proofs">예시<bdi> 13</bdi></a><span class="example-title">: Proof chain containing two proofs</span>
+    <a class="self-link" href="#example-proof-chain-containing-two-proofs">예시<bdi> 13</bdi></a><span class="example-title">: 증명 두 개를 담은 증명 체인</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3637,24 +3627,21 @@ is created:
 }</pre>
       </div>
       <p>
-Now, when the CEO verifies the received <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-17">secured data document</a> with the
-above <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-6">proof chain</a>, they will check that the CFO signed based on the
-signature of the VP of Engineering. First, they will check the proof with an
-<code>id</code> property whose value is <code>urn:proof-1</code> against the public key of the VP of
-Engineering. Note that this proof is over the original document.
+이제 CEO가 위 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-6">증명 체인</a>을 가진 받은 <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-17">보안 데이터 문서</a>를 검증할 때,
+CFO가 엔지니어링 부사장의 서명에 기반하여 서명했는지 확인한다. 먼저, 값이
+<code>urn:proof-1</code>인 <code>id</code> 속성을 가진 증명을 엔지니어링 부사장의 공개키에 대해 확인한다.
+이 증명은 원본 문서에 대한 것임에 유의하라.
       </p>
       <p>
-Next, the CEO will check the proof with an <code>id</code> property whose value is
-<code>urn:proof-2</code> against the public key of the CFO. However, to make sure that the
-CFO signed the document with proof that the VP of Engineering had already
-signed, we verify this proof over the combination of the document and
-<code>urn:proof-1</code>. If verification is successful, the CEO signs, producing a proof
-over the document which includes <code>urn:proof-1</code> and <code>urn:proof-2</code>. The final
-<a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-7">proof chain</a> looks like this:
+다음으로 CEO는 값이 <code>urn:proof-2</code>인 <code>id</code> 속성을 가진 증명을 CFO의 공개키에 대해
+확인한다. 그러나 CFO가 엔지니어링 부사장이 이미 서명했다는 증명과 함께 문서에 서명했음을
+확인하기 위해, 우리는 이 증명을 문서와 <code>urn:proof-1</code>의 조합에 대해 검증한다. 검증이
+성공하면 CEO가 서명하여, <code>urn:proof-1</code>과 <code>urn:proof-2</code>를 포함하는 문서에 대한 증명을
+생성한다. 최종 <a data-link-type="dfn|abstract-op" href="#dfn-proof-chain" class="internalDFN" id="ref-for-dfn-proof-chain-7">증명 체인</a>은 다음과 같다:
       </p>
       <div class="example" id="example-proof-chain-containing-three-proofs">
         <div class="marker">
-    <a class="self-link" href="#example-proof-chain-containing-three-proofs">예시<bdi> 14</bdi></a><span class="example-title">: Proof chain containing three proofs</span>
+    <a class="self-link" href="#example-proof-chain-containing-three-proofs">예시<bdi> 14</bdi></a><span class="example-title">: 증명 세 개를 담은 증명 체인</span>
   </div> <pre class="nohighlight">{
   <span class="comment">// Remainder of secured data document not shown (above)</span>
   "proof": [{
@@ -3675,8 +3662,8 @@ over the document which includes <code>urn:proof-1</code> and <code>urn:proof-2<
 }</pre>
       </div>
       <p>
-The recipient of this <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-18">secured data document</a> then validates it in a similar
-way, checking each proof in the chain.
+그러면 이 <a data-link-type="dfn|abstract-op" href="#dfn-secured-data-document" class="internalDFN" id="ref-for-dfn-secured-data-document-18">보안 데이터 문서</a>의 수신자는 체인의 각 증명을 확인하며 유사한 방식으로
+그것을 유효성 검사한다.
       </p>
     </section>
 
